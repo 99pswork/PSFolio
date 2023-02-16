@@ -842,10 +842,6 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
 @media (min-width: 767px) {
   .about-mf .box-pl2 {
     margin-top: 3rem;
