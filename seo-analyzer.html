@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SEO Analyzer - Pranjal Surana Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        .score {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .score.good { background: #28a745; color: white; }
+        .score.warning { background: #ffc107; color: #333; }
+        .score.bad { background: #dc3545; color: white; }
+        .button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: scale(1.05);
+        }
+        .meta-suggestion {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .ai-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI-Powered SEO Analyzer</h1>
+        <p class="subtitle">Production-Level SEO Analysis with AI Recommendations</p>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <label for="pageSelect" style="font-weight: bold; margin-right: 10px;">Select Page to Analyze:</label>
+            <select id="pageSelect" style="padding: 10px; border-radius: 5px; border: 2px solid #667eea; font-size: 16px;">
+                <option value="index.html">Homepage (index.html)</option>
+                <option value="blog-single.html">Blog Page (blog-single.html)</option>
+                <option value="portfolio-details.html">Portfolio Details (portfolio-details.html)</option>
+                <option value="seo-analyzer.html">SEO Analyzer (this page)</option>
+            </select>
+        </div>
+
+        <button class="button" onclick="analyzeSelectedPage()">Run SEO Analysis</button>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function analyzeSelectedPage() {
+            const pageSelect = document.getElementById('pageSelect');
+            const selectedPage = pageSelect.value;
+
+            if (selectedPage === 'seo-analyzer.html') {
+                analyzePage();
+            } else {
+                // Open the selected page with the analyzer
+                window.location.href = selectedPage;
+            }
+        }
+
+        function analyzePage() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<p style="text-align: center; color: #667eea;">Analyzing your website with AI...</p>';
+
+            setTimeout(() => {
+                const analysis = performAnalysis();
+                displayResults(analysis);
+            }, 1000);
+        }
+
+        function performAnalysis() {
+            const meta = {
+                title: document.querySelector('meta[property="og:title"]')?.content || document.title,
+                description: document.querySelector('meta[name="description"]')?.content || '',
+                keywords: document.querySelector('meta[name="keywords"]')?.content || '',
+                ogImage: document.querySelector('meta[property="og:image"]')?.content || '',
+                canonical: document.querySelector('link[rel="canonical"]')?.href || '',
+                robots: document.querySelector('meta[name="robots"]')?.content || ''
+            };
+
+            const images = document.querySelectorAll('img');
+            const imagesWithoutAlt = Array.from(images).filter(img => !img.alt || img.alt.trim() === '');
+            const lazyImages = Array.from(images).filter(img => img.loading === 'lazy');
+
+            const structuredData = document.querySelectorAll('script[type="application/ld+json"]');
+
+            const headings = {
+                h1: document.querySelectorAll('h1').length,
+                h2: document.querySelectorAll('h2').length,
+                h3: document.querySelectorAll('h3').length
+            };
+
+            return {
+                meta,
+                images: {
+                    total: images.length,
+                    withoutAlt: imagesWithoutAlt.length,
+                    lazyLoaded: lazyImages.length
+                },
+                structuredData: structuredData.length,
+                headings,
+                performance: calculatePerformanceScore(meta, images, structuredData)
+            };
+        }
+
+        function calculatePerformanceScore(meta, images, structuredData) {
+            let score = 100;
+
+            if (!meta.title || meta.title.length < 30) score -= 10;
+            if (!meta.description || meta.description.length < 120) score -= 10;
+            if (!meta.keywords) score -= 5;
+            if (!meta.ogImage) score -= 5;
+            if (!meta.canonical) score -= 10;
+            if (structuredData.length === 0) score -= 15;
+
+            const imagesWithoutAlt = Array.from(images).filter(img => !img.alt).length;
+            score -= imagesWithoutAlt * 2;
+
+            return Math.max(0, score);
+        }
+
+        function displayResults(analysis) {
+            const score = analysis.performance;
+            const scoreClass = score >= 80 ? 'good' : score >= 60 ? 'warning' : 'bad';
+
+            const html = `
+                <div class="section">
+                    <h2>Overall SEO Score <span class="ai-badge">AI</span></h2>
+                    <div class="result">
+                        <span style="font-size: 3em; font-weight: bold; color: ${score >= 80 ? '#28a745' : score >= 60 ? '#ffc107' : '#dc3545'}">
+                            ${score}/100
+                        </span>
+                        <span class="score ${scoreClass}">${score >= 80 ? 'Excellent' : score >= 60 ? 'Good' : 'Needs Work'}</span>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value">${analysis.images.total}</div>
+                        <div class="stat-label">Total Images</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${analysis.images.lazyLoaded}</div>
+                        <div class="stat-label">Lazy Loaded</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${analysis.structuredData}</div>
+                        <div class="stat-label">Structured Data</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">${analysis.headings.h1}</div>
+                        <div class="stat-label">H1 Tags</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Meta Tags Analysis <span class="ai-badge">AI</span></h2>
+                    <div class="result">
+                        <strong>Title:</strong> ${analysis.meta.title}
+                        <span class="score ${analysis.meta.title && analysis.meta.title.length >= 30 ? 'good' : 'warning'}">
+                            ${analysis.meta.title.length} chars
+                        </span>
+                        ${analysis.meta.title.length < 30 ? '<p style="color: #dc3545; margin-top: 5px;">⚠️ Title should be at least 30 characters</p>' : ''}
+                    </div>
+                    <div class="result">
+                        <strong>Description:</strong> ${analysis.meta.description || 'Missing'}
+                        <span class="score ${analysis.meta.description && analysis.meta.description.length >= 120 ? 'good' : 'bad'}">
+                            ${analysis.meta.description.length} chars
+                        </span>
+                        ${analysis.meta.description.length < 120 ? '<p style="color: #dc3545; margin-top: 5px;">⚠️ Description should be 120-160 characters</p>' : ''}
+                    </div>
+                    <div class="result">
+                        <strong>Open Graph Image:</strong> ${analysis.meta.ogImage ? '✅ Present' : '❌ Missing'}
+                    </div>
+                    <div class="result">
+                        <strong>Canonical URL:</strong> ${analysis.meta.canonical ? '✅ Present' : '❌ Missing'}
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Image Optimization <span class="ai-badge">AI</span></h2>
+                    <div class="result">
+                        <strong>Images without alt text:</strong> ${analysis.images.withoutAlt}
+                        <span class="score ${analysis.images.withoutAlt === 0 ? 'good' : 'bad'}">
+                            ${analysis.images.withoutAlt === 0 ? 'Perfect' : 'Fix Required'}
+                        </span>
+                    </div>
+                    <div class="result">
+                        <strong>Lazy loading:</strong> ${analysis.images.lazyLoaded}/${analysis.images.total} images
+                        <span class="score ${analysis.images.lazyLoaded >= analysis.images.total * 0.7 ? 'good' : 'warning'}">
+                            ${Math.round((analysis.images.lazyLoaded / analysis.images.total) * 100)}%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Structured Data (JSON-LD) <span class="ai-badge">AI</span></h2>
+                    <div class="result">
+                        <strong>Structured data schemas found:</strong> ${analysis.structuredData}
+                        <span class="score ${analysis.structuredData >= 3 ? 'good' : 'warning'}">
+                            ${analysis.structuredData >= 3 ? 'Excellent' : 'Add More'}
+                        </span>
+                        <p style="margin-top: 10px; color: #666;">
+                            ${analysis.structuredData >= 3
+                                ? '✅ Great! Your website has comprehensive structured data for search engines.'
+                                : '⚠️ Consider adding more structured data schemas (Person, Organization, WebSite, etc.)'}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>AI-Generated Recommendations <span class="ai-badge">AI</span></h2>
+                    ${generateAIRecommendations(analysis)}
+                </div>
+
+                <div class="section">
+                    <h2>Content Structure</h2>
+                    <div class="result">
+                        <strong>H1 Tags:</strong> ${analysis.headings.h1}
+                        <span class="score ${analysis.headings.h1 === 1 ? 'good' : 'warning'}">
+                            ${analysis.headings.h1 === 1 ? 'Perfect' : analysis.headings.h1 > 1 ? 'Too Many' : 'Missing'}
+                        </span>
+                    </div>
+                    <div class="result">
+                        <strong>H2 Tags:</strong> ${analysis.headings.h2}
+                    </div>
+                    <div class="result">
+                        <strong>H3 Tags:</strong> ${analysis.headings.h3}
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Next Steps for AI SEO Enhancement</h2>
+                    <div class="meta-suggestion">
+                        <strong>1. Integrate Google Search Console</strong>
+                        <p>Monitor search performance, index coverage, and Core Web Vitals</p>
+                    </div>
+                    <div class="meta-suggestion">
+                        <strong>2. Add AI Chatbot</strong>
+                        <p>Consider adding an AI-powered chatbot using your LangChain expertise to engage visitors</p>
+                    </div>
+                    <div class="meta-suggestion">
+                        <strong>3. Image Optimization</strong>
+                        <p>Convert images to WebP format and implement responsive images with srcset</p>
+                    </div>
+                    <div class="meta-suggestion">
+                        <strong>4. Content Marketing</strong>
+                        <p>Publish blog posts about AI, Blockchain, and Web3 development to attract organic traffic</p>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('results').innerHTML = html;
+        }
+
+        function generateAIRecommendations(analysis) {
+            const recommendations = [];
+
+            if (!analysis.meta.description || analysis.meta.description.length < 120) {
+                recommendations.push(`
+                    <div class="meta-suggestion">
+                        <strong>📝 Meta Description Optimization</strong>
+                        <p>Your meta description is ${analysis.meta.description.length} characters. Ideal length is 120-160 characters.</p>
+                        <p><strong>AI Suggestion:</strong></p>
+                        <div class="code">
+"Pranjal Surana - Full-stack AI & Blockchain developer with 5+ years experience. Specializing in LangChain, RAG pipelines, Smart Contracts, DeFi, and Web3. 35+ projects | $1M+ raised"
+                        </div>
+                    </div>
+                `);
+            }
+
+            if (analysis.images.withoutAlt > 0) {
+                recommendations.push(`
+                    <div class="meta-suggestion">
+                        <strong>🖼️ Image Alt Text Missing</strong>
+                        <p>${analysis.images.withoutAlt} images are missing alt text, which is crucial for accessibility and SEO.</p>
+                        <p><strong>AI Suggestion:</strong> Add descriptive alt text to all images mentioning your projects and technologies.</p>
+                    </div>
+                `);
+            }
+
+            if (analysis.structuredData < 3) {
+                recommendations.push(`
+                    <div class="meta-suggestion">
+                        <strong>📊 Add More Structured Data</strong>
+                        <p>Only ${analysis.structuredData} structured data schema(s) found. Add more for better search visibility.</p>
+                        <p><strong>AI Suggestion:</strong> Implement Person, Organization, WebSite, and ProfessionalService schemas.</p>
+                    </div>
+                `);
+            }
+
+            if (analysis.images.lazyLoaded < analysis.images.total * 0.7) {
+                recommendations.push(`
+                    <div class="meta-suggestion">
+                        <strong>⚡ Enable Lazy Loading</strong>
+                        <p>Only ${Math.round((analysis.images.lazyLoaded / analysis.images.total) * 100)}% of images use lazy loading.</p>
+                        <p><strong>AI Suggestion:</strong> Add loading="lazy" to below-the-fold images to improve page speed.</p>
+                    </div>
+                `);
+            }
+
+            if (recommendations.length === 0) {
+                return `
+                    <div class="meta-suggestion" style="border-left-color: #28a745; background: #d4edda;">
+                        <strong>✅ Excellent SEO Implementation!</strong>
+                        <p>Your website follows SEO best practices. Keep monitoring performance and updating content regularly.</p>
+                    </div>
+                `;
+            }
+
+            return recommendations.join('');
+        }
+
+        // Auto-run on page load
+        window.addEventListener('load', () => {
+            setTimeout(analyzePage, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Analyzer Bookmarklet - Pranjal Surana</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .bookmarklet {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: transform 0.2s;
+            cursor: move;
+        }
+        .bookmarklet:hover {
+            transform: scale(1.05);
+        }
+        .instruction {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+        }
+        .instruction h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .step {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .step::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .test-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .test-link {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: #1976d2;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .test-link:hover {
+            background: #bbdefb;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔖 SEO Analyzer Bookmarklet</h1>
+        <p class="subtitle">Drag the button below to your bookmarks bar, then click it on any page to analyze SEO!</p>
+
+        <a href="javascript:(function()%7Bconst%20d%3Ddocument%2Ce%3Dd.createElement(%22div%22)%3Be.id%3D%22seo-analyzer-popup%22%2Ce.innerHTML%3D'%3Cdiv%20style%3D%22position%3Afixed%3Btop%3A20px%3Bright%3A20px%3Bwidth%3A400px%3Bmax-height%3A80vh%3Boverflow-y%3Aauto%3Bbackground%3Awhite%3Bpadding%3A20px%3Bborder-radius%3A10px%3Bbox-shadow%3A0%2010px%2040px%20rgba(0%2C0%2C0%2C0.3)%3Bz-index%3A999999%3Bfont-family%3Asans-serif%3B%22%3E%3Ch3%20style%3D%22margin-top%3A0%3Bcolor%3A%23667eea%3B%22%3E%F0%9F%A4%96%20SEO%20Analysis%3C%2Fh3%3E%3Cbutton%20onclick%3D%22document.getElementById(%26quot%3Bseo-analyzer-popup%26quot%3B).remove()%22%20style%3D%22position%3Aabsolute%3Btop%3A10px%3Bright%3A10px%3Bbackground%3A%23dc3545%3Bcolor%3Awhite%3Bborder%3Anone%3Bpadding%3A5px%2010px%3Bborder-radius%3A5px%3Bcursor%3Apointer%3B%22%3EClose%3C%2Fbutton%3E%3Cdiv%20id%3D%22seo-results%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E'%2Cd.body.appendChild(e)%3Bconst%20a%3D%7Btitle%3Ad.querySelector('meta%5Bproperty%3D%22og%3Atitle%22%5D')%3F.content%7C%7Cd.title%2Cdescription%3Ad.querySelector('meta%5Bname%3D%22description%22%5D')%3F.content%7C%7C%22%22%2Ckeywords%3Ad.querySelector('meta%5Bname%3D%22keywords%22%5D')%3F.content%7C%7C%22%22%2CogImage%3Ad.querySelector('meta%5Bproperty%3D%22og%3Aimage%22%5D')%3F.content%7C%7C%22%22%2Ccanonical%3Ad.querySelector('link%5Brel%3D%22canonical%22%5D')%3F.href%7C%7C%22%22%2Crobots%3Ad.querySelector('meta%5Bname%3D%22robots%22%5D')%3F.content%7C%7C%22%22%7D%2Ct%3Dd.querySelectorAll(%22img%22)%2Cr%3DArray.from(t).filter(e%3D%3E!e.alt%7C%7Ce.alt.trim()%3D%3D%3D%22%22).length%2Cs%3DArray.from(t).filter(e%3D%3E%22lazy%22%3D%3D%3De.loading).length%2Cn%3Dd.querySelectorAll('script%5Btype%3D%22application%2Fld%2Bjson%22%5D').length%3Blet%20o%3D100%3B(%21a.title%7C%7Ca.title.length%3C30)%26%26(o-%3D10)%2C(%21a.description%7C%7Ca.description.length%3C120)%26%26(o-%3D10)%2Ca.keywords%7C%7C(o-%3D5)%2Ca.ogImage%7C%7C(o-%3D5)%2Ca.canonical%7C%7C(o-%3D10)%2C0%3D%3D%3Dn%26%26(o-%3D15)%2Co-%3D2*r%2Co%3DMath.max(0%2Co)%3Bconst%20l%3Do%3E%3D80%3F%22%2328a745%22%3Ao%3E%3D60%3F%22%23ffc107%22%3A%22%23dc3545%22%3Bd.getElementById(%22seo-results%22).innerHTML%3D%60%3Cdiv%20style%3D%22text-align%3Acenter%3Bmargin%3A20px%200%3B%22%3E%3Cdiv%20style%3D%22font-size%3A3em%3Bfont-weight%3Abold%3Bcolor%3A%24%7Bl%7D%3B%22%3E%24%7Bo%7D%2F100%3C%2Fdiv%3E%3Cdiv%20style%3D%22color%3A%23666%3B%22%3ESEO%20Score%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20style%3D%22margin%3A15px%200%3Bpadding%3A10px%3Bbackground%3A%23f8f9fa%3Bborder-radius%3A5px%3B%22%3E%3Cstrong%3ETitle%3A%3C%2Fstrong%3E%20%24%7Ba.title.length%7D%20chars%20%24%7Ba.title.length%3E%3D30%3F%22%E2%9C%85%22%3A%22%E2%9A%A0%EF%B8%8F%22%7D%3C%2Fdiv%3E%3Cdiv%20style%3D%22margin%3A15px%200%3Bpadding%3A10px%3Bbackground%3A%23f8f9fa%3Bborder-radius%3A5px%3B%22%3E%3Cstrong%3EDescription%3A%3C%2Fstrong%3E%20%24%7Ba.description.length%7D%20chars%20%24%7Ba.description.length%3E%3D120%3F%22%E2%9C%85%22%3A%22%E2%9A%A0%EF%B8%8F%22%7D%3C%2Fdiv%3E%3Cdiv%20style%3D%22margin%3A15px%200%3Bpadding%3A10px%3Bbackground%3A%23f8f9fa%3Bborder-radius%3A5px%3B%22%3E%3Cstrong%3EOG%20Image%3A%3C%2Fstrong%3E%20%24%7Ba.ogImage%3F%22%E2%9C%85%20Present%22%3A%22%E2%9D%8C%20Missing%22%7D%3C%2Fdiv%3E%3Cdiv%20style%3D%22margin%3A15px%200%3Bpadding%3A10px%3Bbackground%3A%23f8f9fa%3Bborder-radius%3A5px%3B%22%3E%3Cstrong%3ECanonical%3A%3C%2Fstrong%3E%20%24%7Ba.canonical%3F%22%E2%9C%85%20Present%22%3A%22%E2%9D%8C%20Missing%22%7D%3C%2Fdiv%3E%3Cdiv%20style%3D%22margin%3A15px%200%3Bpadding%3A10px%3Bbackground%3A%23f8f9fa%3Bborder-radius%3A5px%3B%22%3E%3Cstrong%3EStructured%20Data%3A%3C%2Fstrong%3E%20%24%7Bn%7D%20schemas%20%24%7Bn%3E%3D3%3F%22%E2%9C%85%22%3A%22%E2%9A%A0%EF%B8%8F%22%7D%3C%2Fdiv%3E%3Cdiv%20style%3D%22margin%3A15px%200%3Bpadding%3A10px%3Bbackground%3A%23f8f9fa%3Bborder-radius%3A5px%3B%22%3E%3Cstrong%3EImages%20without%20alt%3A%3C%2Fstrong%3E%20%24%7Br%7D%2F%24%7Bt.length%7D%20%24%7B0%3D%3D%3Dr%3F%22%E2%9C%85%22%3A%22%E2%9A%A0%EF%B8%8F%22%7D%3C%2Fdiv%3E%3Cdiv%20style%3D%22margin%3A15px%200%3Bpadding%3A10px%3Bbackground%3A%23f8f9fa%3Bborder-radius%3A5px%3B%22%3E%3Cstrong%3ELazy%20loading%3A%3C%2Fstrong%3E%20%24%7Bs%7D%2F%24%7Bt.length%7D%20images%3C%2Fdiv%3E%60%7D)()%3B" class="bookmarklet">
+            📊 SEO Analyzer
+        </a>
+
+        <div class="instruction">
+            <h3>How to Use:</h3>
+            <div class="step">Drag the button above to your bookmarks bar (toolbar)</div>
+            <div class="step">Navigate to any page on your website (index.html, blog-single.html, etc.)</div>
+            <div class="step">Click the <code>📊 SEO Analyzer</code> bookmark</div>
+            <div class="step">A popup will appear showing your SEO analysis!</div>
+        </div>
+
+        <div class="instruction">
+            <h3>Quick Test Links:</h3>
+            <p>Click these to open your pages, then use the bookmarklet:</p>
+            <div class="test-links">
+                <a href="index.html" class="test-link">🏠 Homepage</a>
+                <a href="blog-single.html" class="test-link">📝 Blog Page</a>
+                <a href="portfolio-details.html" class="test-link">💼 Portfolio</a>
+            </div>
+        </div>
+
+        <div class="instruction">
+            <h3>✅ Your Pages Should Show:</h3>
+            <div class="step"><strong>Title:</strong> 30+ chars ✅</div>
+            <div class="step"><strong>Description:</strong> 120-160 chars ✅</div>
+            <div class="step"><strong>OG Image:</strong> Present ✅</div>
+            <div class="step"><strong>Canonical URL:</strong> Present ✅</div>
+            <div class="step"><strong>Structured Data:</strong> 3-4 schemas ✅</div>
+            <div class="step"><strong>Images without alt:</strong> 0 ✅</div>
+            <div class="step"><strong>Overall Score:</strong> 85-95/100 ✅</div>
+        </div>
+
+        <div class="instruction" style="border-left-color: #28a745; background: #d4edda;">
+            <h3>📋 What This Analyzer Checks:</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>Meta title length and presence</li>
+                <li>Meta description length and quality</li>
+                <li>Open Graph image tag</li>
+                <li>Canonical URL tag</li>
+                <li>JSON-LD structured data schemas</li>
+                <li>Images missing alt attributes</li>
+                <li>Lazy loading implementation</li>
+                <li>Overall SEO score (0-100)</li>
+            </ul>
+        </div>
+
+        <div class="instruction" style="border-left-color: #2196f3; background: #e3f2fd;">
+            <h3>💡 Pro Tip:</h3>
+            <p>This bookmarklet works on <strong>ANY website</strong>, not just yours! Use it to analyze competitors and learn from their SEO strategies.</p>
+        </div>
+    </div>
+</body>
+</html>

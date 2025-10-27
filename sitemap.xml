@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://pranjalsurana.com/</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pranjalsurana.com/assets/img/pranjal.jpeg</image:loc>
+      <image:title>Pranjal Surana - AI &amp; Blockchain Developer</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://pranjalsurana.com/#about</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Services Section -->
+  <url>
+    <loc>https://pranjalsurana.com/#services</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Portfolio Section -->
+  <url>
+    <loc>https://pranjalsurana.com/#work</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pranjalsurana.com/assets/img/ash copy.png</image:loc>
+      <image:title>Ash Inc - AI Job Hunt Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pranjalsurana.com/assets/img/torque-fi.jpg</image:loc>
+      <image:title>Torque Finance - DeFi Application</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pranjalsurana.com/assets/img/alphashark.webp</image:loc>
+      <image:title>Alpha Sharks - Smart Contract Development</image:title>
+    </image:image>
+  </url>
+
+  <!-- Testimonials Section -->
+  <url>
+    <loc>https://pranjalsurana.com/#testimonial</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://pranjalsurana.com/#contact</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Portfolio Details Page -->
+  <url>
+    <loc>https://pranjalsurana.com/portfolio-details.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Single Page -->
+  <url>
+    <loc>https://pranjalsurana.com/blog-single.html</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Resume PDF -->
+  <url>
+    <loc>https://pranjalsurana.com/assets/PS_Resume_new.pdf</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
