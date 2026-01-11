@@ -1,31 +1,21 @@
 # robots.txt for pranjalsurana.com
-# Generated for production-level SEO optimization
-
 User-agent: *
 Allow: /
-Disallow: /forms/
-Disallow: /assets/vendor/
-Disallow: /*.pdf$
 
-# Allow Google Image Bot
+# Sitemap
+Sitemap: https://pranjalsurana.com/sitemap.xml
+
+# Crawl-delay for good practice
+Crawl-delay: 0
+
+# Allow all bots to index images
 User-agent: Googlebot-Image
 Allow: /assets/img/
 
-# Sitemap location
-Sitemap: https://pranjalsurana.com/sitemap.xml
+# Block access to sensitive directories
+Disallow: /forms/
+Disallow: /vendor/
 
-# Crawl-delay for polite crawling
-Crawl-delay: 1
-
-# Block bad bots
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: dotbot
-Disallow: /
+# Allow access to CSS and JS for proper rendering
+Allow: /assets/css/
+Allow: /assets/js/

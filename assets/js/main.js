@@ -227,8 +227,200 @@
   }
 
   /**
-   * Initiate Pure Counter 
+   * Initiate Pure Counter
    */
   new PureCounter();
+
+  /**
+   * Scroll Progress Bar
+   */
+  const createProgressBar = () => {
+    const progressBar = document.createElement('div');
+    progressBar.id = 'scroll-progress';
+    progressBar.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0066FF, #3388FF);
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+    `;
+    document.body.appendChild(progressBar);
+    return progressBar;
+  };
+
+  const progressBar = createProgressBar();
+
+  const updateProgressBar = () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+  };
+
+  window.addEventListener('scroll', updateProgressBar);
+  window.addEventListener('resize', updateProgressBar);
+
+  /**
+   * Card Reveal Animations with Intersection Observer
+   */
+  const observeCards = () => {
+    const cards = document.querySelectorAll('.bento-card, .service-card, .portfolio-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(card);
+    });
+  };
+
+  // Run on page load
+  window.addEventListener('load', observeCards);
+
+  /**
+   * Scroll indicator smooth scroll
+   */
+  const scrollIndicator = select('.scroll-indicator');
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+      const aboutSection = select('#about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  /**
+   * Network illuminated background animation
+   */
+  const initNetworkBackground = () => {
+    const canvas = document.getElementById('network-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    // Configuration
+    const config = {
+      particleCount: 80,
+      particleSpeed: 0.3,
+      connectionDistance: 150,
+      particleColor: 'rgba(0, 102, 255, 0.6)',
+      lineColor: 'rgba(0, 102, 255, 0.2)',
+      glowColor: 'rgba(0, 102, 255, 0.8)',
+      nodeRadius: 2
+    };
+
+    // Particle class
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * config.particleSpeed;
+        this.vy = (Math.random() - 0.5) * config.particleSpeed;
+        this.radius = config.nodeRadius;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce off edges
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Keep within bounds
+        this.x = Math.max(0, Math.min(width, this.x));
+        this.y = Math.max(0, Math.min(height, this.y));
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = config.particleColor;
+        ctx.fill();
+
+        // Add glow effect
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = config.glowColor;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    // Create particles
+    const particles = [];
+    for (let i = 0; i < config.particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    // Draw connections between nearby particles
+    const drawConnections = () => {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < config.connectionDistance) {
+            const opacity = 1 - (distance / config.connectionDistance);
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(0, 102, 255, ${opacity * 0.2})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+
+      drawConnections();
+
+      requestAnimationFrame(animate);
+    };
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+
+    // Start animation
+    animate();
+  };
+
+  // Initialize network background on load
+  window.addEventListener('load', initNetworkBackground);
 
 })()
