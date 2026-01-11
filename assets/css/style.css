@@ -959,10 +959,15 @@ a:hover {
 .work-img {
   display: block;
   overflow: hidden;
+  height: 280px;
 }
 
 .work-img img {
   transition: all 1s;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .work-content {
