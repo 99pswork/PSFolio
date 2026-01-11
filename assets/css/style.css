@@ -212,11 +212,18 @@ html {
   .bento-card {
     padding: 2rem 1.5rem;
     margin-bottom: 0.75rem;
+    overflow: hidden;
+    max-width: 100%;
   }
 
   /* Reduce hover effects on mobile */
   .bento-card:hover {
     transform: translateY(-2px);
+  }
+
+  /* Ensure profile card bento doesn't overflow */
+  .bento-card--lg {
+    padding: 1.5rem 1rem;
   }
 
   /* Better mobile spacing for sections */
@@ -256,7 +263,14 @@ html {
 @media (max-width: 767px) {
   /* Profile card mobile adjustments */
   .profile-card {
-    padding: 1rem 0;
+    padding: 1rem 0.75rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .profile-info {
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .profile-image {
@@ -269,18 +283,35 @@ html {
     font-size: 1.85rem;
     margin-bottom: 0.75rem;
     line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    padding: 0 0.5rem;
   }
 
   .profile-title {
-    font-size: 1.05rem;
+    font-size: 0.8rem;
     margin-bottom: 1.5rem;
     line-height: 1.4;
+    padding: 0 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
 
   .profile-email {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     margin-bottom: 1.25rem;
     line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .profile-email i {
+    font-size: 0.7rem;
+    margin-right: 0.25rem;
   }
 
   /* Service cards mobile spacing */
@@ -471,6 +502,203 @@ html {
     padding: 0.2rem 0.6rem;
     font-size: 0.7rem;
   }
+
+  /* ===== DECORATIVE SHAPES FOR MOBILE ===== */
+
+  /* Floating decorative circles in section backgrounds */
+  .about-mf::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.08), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-mf::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: -20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 70% 70%, rgba(51, 136, 255, 0.06), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .services-mf::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -25px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(0, 102, 255, 0.07), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .portfolio-mf::before {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: -35px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.09), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Ensure sections are positioned relative for pseudo-elements */
+  .about-mf,
+  .services-mf,
+  .portfolio-mf {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Corner accent for bento cards */
+  .bento-card {
+    position: relative;
+  }
+
+  .bento-card::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid rgba(0, 102, 255, 0.15);
+    border-right: 2px solid rgba(0, 102, 255, 0.15);
+    border-radius: 0 0.5rem 0 0;
+    pointer-events: none;
+  }
+
+  /* Decorative gradient behind profile card */
+  .profile-card {
+    position: relative;
+    overflow: visible;
+  }
+
+  .profile-card::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(51, 136, 255, 0.04), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Decorative line accent under section titles */
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.5), transparent);
+    border-radius: 2px;
+  }
+
+  .section-title {
+    position: relative;
+    padding-bottom: 1rem;
+  }
+
+  /* Animated dots pattern on right side */
+  .contact-section::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: 10px;
+    width: 40px;
+    height: 200px;
+    background-image:
+      radial-gradient(circle, rgba(0, 102, 255, 0.1) 2px, transparent 2px);
+    background-size: 15px 15px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .contact-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Service card decorative corner shapes */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    width: 25px;
+    height: 25px;
+    border-bottom: 2px solid rgba(0, 102, 255, 0.12);
+    border-left: 2px solid rgba(0, 102, 255, 0.12);
+    border-radius: 0 0 0 0.5rem;
+    pointer-events: none;
+  }
+
+  /* Subtle gradient overlay for portfolio section */
+  .portfolio-mf::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.02));
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Small accent circles scattered */
+  .testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(0, 102, 255, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .testimonial-section::after {
+    content: '';
+    position: absolute;
+    bottom: 25%;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(51, 136, 255, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .testimonial-section {
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 /* Extra small mobile devices (320px - 480px) */
@@ -576,6 +804,90 @@ html {
     padding-left: 0.85rem;
     padding-right: 0.85rem;
   }
+
+  /* ===== SCALED DOWN DECORATIVE SHAPES FOR EXTRA SMALL SCREENS ===== */
+
+  /* Smaller floating circles for tiny screens */
+  .about-mf::before {
+    width: 90px;
+    height: 90px;
+    right: -20px;
+  }
+
+  .about-mf::after {
+    width: 70px;
+    height: 70px;
+    left: -15px;
+  }
+
+  .services-mf::before {
+    width: 80px;
+    height: 80px;
+    right: -18px;
+  }
+
+  .portfolio-mf::before {
+    width: 85px;
+    height: 85px;
+    right: -22px;
+  }
+
+  /* Smaller corner accents for bento cards */
+  .bento-card::after {
+    width: 24px;
+    height: 24px;
+    top: 6px;
+    right: 6px;
+    border-width: 1.5px;
+  }
+
+  .service-card::before {
+    width: 20px;
+    height: 20px;
+    bottom: 6px;
+    left: 6px;
+    border-width: 1.5px;
+  }
+
+  /* Smaller decorative circle behind profile */
+  .profile-card::before {
+    width: 110px;
+    height: 110px;
+    top: -10px;
+    right: -10px;
+  }
+
+  /* Thinner section title accent */
+  .section-title::after {
+    width: 50px;
+    height: 2px;
+  }
+
+  /* Narrower dots pattern */
+  .contact-section::after {
+    width: 30px;
+    height: 150px;
+    background-size: 12px 12px;
+    right: 8px;
+  }
+
+  /* Smaller testimonial accent circles */
+  .testimonial-section::before {
+    width: 50px;
+    height: 50px;
+    right: 15px;
+  }
+
+  .testimonial-section::after {
+    width: 35px;
+    height: 35px;
+    right: 30px;
+  }
+
+  /* Narrower portfolio gradient overlay */
+  .portfolio-mf::after {
+    width: 60px;
+  }
 }
 
 /* Fallback for browsers without grid support */
@@ -607,14 +919,44 @@ html {
   margin: 0 auto 1.5rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid var(--blue-primary);
+  position: relative;
   box-shadow: var(--shadow-md);
+}
+
+/* Rotating gradient border animation */
+.profile-image::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #0066FF, #3388FF, #0052CC, #3388FF, #0066FF);
+  background-size: 300% 300%;
+  animation: rotateBorder 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateBorder {
+  0% {
+    background-position: 0% 50%;
+    transform: rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: rotate(360deg);
+  }
 }
 
 .profile-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--dark-bg);
+  position: relative;
+  z-index: 1;
 }
 
 .profile-name {
@@ -3294,4 +3636,279 @@ footer .credits a {
     0 8px 24px rgba(0, 102, 255, 0.4),
     0 0 40px rgba(0, 102, 255, 0.3);
   transform: translateY(-3px);
+}
+
+/*--------------------------------------------------------------
+# Desktop Decorative Shapes & Visual Elements
+--------------------------------------------------------------*/
+
+@media (min-width: 768px) {
+  /* Ensure sections have relative positioning for decorative elements */
+  .about-mf,
+  .services-mf,
+  .portfolio-mf,
+  .testimonial-section,
+  .contact-section {
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Large floating decorative circles for desktop */
+  .about-mf::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: -80px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.06), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-mf::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 70% 70%, rgba(51, 136, 255, 0.05), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Services section decorative shapes */
+  .services-mf::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    border: 3px solid rgba(0, 102, 255, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .services-mf::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: 80px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at 40% 40%, rgba(0, 102, 255, 0.04), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Portfolio section decorative gradient overlay on right */
+  .portfolio-mf::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.02), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .portfolio-mf::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(51, 136, 255, 0.05), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Testimonial section decorative circles */
+  .testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 60px;
+    width: 180px;
+    height: 180px;
+    border: 3px solid rgba(0, 102, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .testimonial-section::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 120px;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle at center, rgba(51, 136, 255, 0.04), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Contact section decorative dots pattern on right side */
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 40px;
+    width: 100px;
+    height: 400px;
+    background-image:
+      radial-gradient(circle, rgba(0, 102, 255, 0.08) 3px, transparent 3px);
+    background-size: 25px 25px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .contact-section::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(0, 102, 255, 0.04), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Decorative line accents in empty spaces */
+  .section-header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0, 102, 255, 0.3), transparent);
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  .section-header {
+    position: relative;
+  }
+
+  /* Additional floating shapes between content gaps */
+  .bento-grid::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -40px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(51, 136, 255, 0.08);
+    border-radius: 20px;
+    transform: rotate(15deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bento-grid {
+    position: relative;
+  }
+
+  /* Gradient bars on right side */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    width: 4px;
+    height: 200px;
+    background: linear-gradient(180deg, transparent, rgba(0, 102, 255, 0.3), transparent);
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Small accent circles scattered on right */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 25%;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 102, 255, 0.04);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 55%;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(51, 136, 255, 0.03), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Rotating 3D Sphere next to profile card */
+  .bento-card--lg:first-child::after {
+    content: '';
+    position: absolute;
+    right: -320px;
+    top: 50%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(51, 136, 255, 0.4), transparent 50%),
+      radial-gradient(circle at 70% 70%, rgba(0, 102, 255, 0.3), transparent 60%),
+      linear-gradient(135deg, rgba(0, 102, 255, 0.15), rgba(51, 136, 255, 0.2));
+    box-shadow:
+      inset -25px -25px 50px rgba(0, 0, 0, 0.4),
+      inset 25px 25px 50px rgba(51, 136, 255, 0.3),
+      0 0 80px rgba(0, 102, 255, 0.2),
+      0 0 120px rgba(0, 102, 255, 0.1);
+    animation: floatAndRotateSphere 15s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes floatAndRotateSphere {
+    0% {
+      transform: translateY(-50%) translateX(0) rotateY(0deg) rotateZ(0deg) scale(1);
+    }
+    25% {
+      transform: translateY(-60%) translateX(10px) rotateY(90deg) rotateZ(90deg) scale(1.05);
+    }
+    50% {
+      transform: translateY(-40%) translateX(0) rotateY(180deg) rotateZ(180deg) scale(0.95);
+    }
+    75% {
+      transform: translateY(-60%) translateX(-10px) rotateY(270deg) rotateZ(270deg) scale(1.05);
+    }
+    100% {
+      transform: translateY(-50%) translateX(0) rotateY(360deg) rotateZ(360deg) scale(1);
+    }
+  }
+
+  /* Add perspective to parent */
+  .bento-card--lg:first-child {
+    perspective: 1200px;
+    overflow: visible;
+  }
 }
