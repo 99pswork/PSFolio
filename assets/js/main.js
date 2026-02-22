@@ -114,9 +114,19 @@
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
+    let navbar = select('#navbar')
+    let header = select('#header')
+    navbar.classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
+    // Remove backdrop-filter when mobile nav is open so position:fixed works correctly
+    if (navbar.classList.contains('navbar-mobile')) {
+      header.style.backdropFilter = 'none'
+      header.style.webkitBackdropFilter = 'none'
+    } else {
+      header.style.backdropFilter = ''
+      header.style.webkitBackdropFilter = ''
+    }
   })
 
   /**
@@ -142,6 +152,9 @@
         let navbarToggle = select('.mobile-nav-toggle')
         navbarToggle.classList.toggle('bi-list')
         navbarToggle.classList.toggle('bi-x')
+        let header = select('#header')
+        header.style.backdropFilter = ''
+        header.style.webkitBackdropFilter = ''
       }
       scrollto(this.hash)
     }
