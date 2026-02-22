@@ -412,7 +412,7 @@
           <!-- Bio Card -->
           <div class="bento-card bento-card--xl bento-card--tall">
             <h5 class="bento-title">About Me</h5>
-            <div class="bio-content">
+            <div class="bio-content bio-collapsed">
               <p>
                 I specialize in delivering comprehensive <strong>AI solutions</strong>, <strong>software solutions</strong>, and <strong>ERP development</strong> services with a proven track record of building scalable enterprise systems. As a full-stack developer with expertise in <strong>AI agents</strong> and intelligent automation, I help businesses transform their operations through cutting-edge technology. My experience includes developing enterprise-grade software solutions at Cisco Systems, working with Java, Spring (REST and SOAP APIs), React, and Next.js.
               </p>
@@ -423,6 +423,7 @@
                 Beyond <strong>AI and software solutions</strong>, I offer blockchain development services with 20+ DeFi projects that collectively raised $1M+. My comprehensive <strong>software development services</strong> include test automation (50+ Cypress test suites) and Python-based automation scripts that reduced manual effort by 90%. Whether you need <strong>AI agents</strong>, custom <strong>ERP systems</strong>, or complete <strong>software solutions</strong>, I deliver enterprise-grade results.
               </p>
             </div>
+            <button class="bio-read-more-btn" onclick="const bio=this.previousElementSibling;bio.classList.toggle('bio-collapsed');this.textContent=bio.classList.contains('bio-collapsed')?'Read More':'Read Less'">Read More</button>
           </div>
 
           <!-- Skills Card -->
@@ -441,7 +442,7 @@
           </div>
 
           <!-- Stat Card 1: Projects -->
-          <div class="bento-card bento-card--md stat-card stat-card--primary">
+          <div class="bento-card bento-card--md stat-card">
             <div class="stat-icon">
               <i class="bi bi-check-circle"></i>
             </div>
@@ -499,7 +500,7 @@
         <div class="bento-grid">
 
           <!-- AI Development - Large Featured Card -->
-          <div class="bento-card bento-card--lg service-card service-card--featured">
+          <div class="bento-card bento-card--lg service-card">
             <div class="service-icon">
               <i class="bi bi-robot"></i>
             </div>
@@ -510,7 +511,7 @@
           </div>
 
           <!-- AI Agents - Large Glassmorphism Card -->
-          <div class="bento-card bento-card--lg service-card service-card--glass">
+          <div class="bento-card bento-card--lg service-card">
             <div class="service-icon">
               <i class="bi bi-cpu"></i>
             </div>
@@ -593,11 +594,11 @@
 
           <!-- HypeZy - Featured Large Card -->
           <div class="bento-card bento-card--lg portfolio-card portfolio-card--featured">
-            <a href="assets/img/hypezy.svg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://hypezy.in/" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/hypezy.svg" alt="HypeZy - Instagram Automation Platform" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -617,11 +618,11 @@
 
           <!-- Jaipur Business - Large Card -->
           <div class="bento-card bento-card--lg portfolio-card">
-            <a href="assets/img/jaipurbiz-2.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://jaipurbiz.in/" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/jaipurbiz-2.png" alt="Jaipur Business - Business Networking Platform" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -640,11 +641,11 @@
 
           <!-- Ash Inc - Medium Card -->
           <div class="bento-card bento-card--md portfolio-card">
-            <a href="assets/img/ash copy.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://yes.inc/" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/ash copy.png" alt="Ash Inc - AI Job Hunt Dashboard" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -661,13 +662,59 @@
             </div>
           </div>
 
+          <!-- Annuity Rates HQ - Medium Card -->
+          <div class="bento-card bento-card--md portfolio-card">
+            <a href="https://annuityrateshq.com/" target="_blank" rel="noopener">
+              <div class="portfolio-image" style="background: #fff;">
+                <img src="assets/img/annuity-logo.png" alt="Annuity Rates HQ - Financial Rates Platform" loading="lazy" style="object-fit: contain; padding: 1rem;">
+                <div class="portfolio-overlay">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </div>
+              </div>
+            </a>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Annuity Rates HQ</h3>
+              <p class="portfolio-description">Financial Rates Platform</p>
+              <div class="portfolio-tags">
+                <span class="tag">Web App</span>
+                <span class="tag">Finance</span>
+              </div>
+              <a href="https://annuityrateshq.com/" target="_blank" rel="noopener" class="portfolio-link">
+                View Project <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- MindLight AI - Medium Card -->
+          <div class="bento-card bento-card--md portfolio-card">
+            <a href="https://mindlight.ai/" target="_blank" rel="noopener">
+              <div class="portfolio-image">
+                <img src="assets/img/mindlight-logo.jpg" alt="MindLight AI - AI Platform" loading="lazy">
+                <div class="portfolio-overlay">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </div>
+              </div>
+            </a>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">MindLight AI</h3>
+              <p class="portfolio-description">AI Platform</p>
+              <div class="portfolio-tags">
+                <span class="tag">AI</span>
+                <span class="tag">SaaS</span>
+              </div>
+              <a href="https://mindlight.ai/" target="_blank" rel="noopener" class="portfolio-link">
+                View Project <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
           <!-- Torque Finance - Medium Card -->
           <div class="bento-card bento-card--md portfolio-card">
-            <a href="assets/img/torque-fi.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://app.torque.fi/" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/torque-fi.jpg" alt="Torque Finance - DeFi Application" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -686,11 +733,11 @@
 
           <!-- Alpha Sharks - Medium Card -->
           <div class="bento-card bento-card--md portfolio-card">
-            <a href="assets/img/alphashark.webp" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://www.alphasharks.io/" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/alphashark.webp" alt="Alpha Sharks - Smart Contract Development" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -709,11 +756,11 @@
 
           <!-- Sea Token & Staking - Medium Card -->
           <div class="bento-card bento-card--md portfolio-card">
-            <a href="assets/img/logo.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://sea.earth/" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/logo.png" alt="Sea Token - Web3 Staking Platform" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -732,11 +779,11 @@
 
           <!-- Smart Finance - Medium Card -->
           <div class="bento-card bento-card--md portfolio-card">
-            <a href="assets/img/smart_finance.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://smartfinance.exchange/swap" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/smart_finance.jpg" alt="Smart Finance - Backend Microservice" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -755,11 +802,11 @@
 
           <!-- Narativ Lab - Medium Card -->
           <div class="bento-card bento-card--md portfolio-card">
-            <a href="assets/img/thenativlab.gif" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://mint.narativlab.io/" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/thenativlab.gif" alt="Narativ Lab - NFT Minting Platform" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -778,11 +825,11 @@
 
           <!-- The Tiger Clan - Medium Card -->
           <div class="bento-card bento-card--md portfolio-card">
-            <a href="assets/img/thetiger.gif" data-gallery="portfolioGallery" class="portfolio-lightbox">
+            <a href="https://www.thetigerclan.com/" target="_blank" rel="noopener">
               <div class="portfolio-image">
                 <img src="assets/img/thetiger.gif" alt="The Tiger Clan - NFT Collection" loading="lazy">
                 <div class="portfolio-overlay">
-                  <i class="bi bi-arrows-fullscreen"></i>
+                  <i class="bi bi-box-arrow-up-right"></i>
                 </div>
               </div>
             </a>
@@ -828,7 +875,7 @@
                       </div>
                       <div class="content-test">
                         <p class="description lead">
-                          "Pranjai is the best developer I have gotten to know through this channel or other similar channels. He immediately understood how our app worked in technical detail, he started and ended his development before schedule and was generally fast, helpful and productive."
+                          "Pranjal is the best developer I have gotten to know through this channel or other similar channels. He immediately understood how our app worked in technical detail, he started and ended his development before schedule and was generally fast, helpful and productive."
                         </p>
                       </div>
                     </br>
