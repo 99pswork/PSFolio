@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" rx="20" fill="#D4F1F4"/>
+
+  <!-- Title Bar -->
+  <rect x="40" y="30" width="720" height="60" rx="12" fill="#05445E"/>
+  <text x="400" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Delivery &amp; Logistics</text>
+
+  <!-- Map Area -->
+  <rect x="40" y="110" width="440" height="300" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="60" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Live Tracking</text>
+
+  <!-- Simplified Map Background -->
+  <rect x="55" y="150" width="410" height="230" rx="8" fill="#E8F4F8"/>
+
+  <!-- Map Roads -->
+  <path d="M80,300 Q150,250 250,280 T400,250 L450,260" stroke="#CCC" stroke-width="3" fill="none"/>
+  <path d="M100,200 Q200,350 350,300 T440,350" stroke="#CCC" stroke-width="3" fill="none"/>
+  <path d="M150,160 L200,300 L350,370" stroke="#DDD" stroke-width="2" fill="none"/>
+
+  <!-- Route Line -->
+  <path d="M120,310 Q200,260 280,280 L380,240" stroke="#189AB4" stroke-width="3" fill="none" stroke-dasharray="8,4"/>
+
+  <!-- Origin -->
+  <circle cx="120" cy="310" r="10" fill="#05445E" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="120" cy="310" r="4" fill="#FFFFFF"/>
+  <rect x="85" y="325" width="70" height="18" rx="4" fill="#05445E"/>
+  <text x="120" y="337" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#FFFFFF">Mumbai</text>
+
+  <!-- Truck Position -->
+  <rect x="255" y="258" width="28" height="18" rx="4" fill="#189AB4"/>
+  <rect x="249" y="262" width="10" height="10" rx="2" fill="#05445E"/>
+  <circle cx="258" cy="278" r="4" fill="#333"/>
+  <circle cx="275" cy="278" r="4" fill="#333"/>
+  <circle cx="268" cy="268" r="16" fill="none" stroke="#75E6DA" stroke-width="2" opacity="0.5"/>
+  <circle cx="268" cy="268" r="22" fill="none" stroke="#75E6DA" stroke-width="1" opacity="0.3"/>
+
+  <!-- Destination -->
+  <circle cx="380" cy="240" r="10" fill="#e74c3c" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="380" cy="240" r="4" fill="#FFFFFF"/>
+  <rect x="350" y="255" width="60" height="18" rx="4" fill="#e74c3c"/>
+  <text x="380" y="267" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#FFFFFF">Delhi</text>
+
+  <!-- Other pins -->
+  <circle cx="200" cy="195" r="6" fill="#75E6DA" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="350" cy="340" r="6" fill="#75E6DA" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- Map Legend -->
+  <rect x="60" y="390" width="8" height="8" rx="4" fill="#05445E"/>
+  <text x="73" y="398" font-family="Arial, sans-serif" font-size="9" fill="#666">Origin</text>
+  <rect x="130" y="390" width="8" height="8" rx="4" fill="#189AB4"/>
+  <text x="143" y="398" font-family="Arial, sans-serif" font-size="9" fill="#666">In Transit</text>
+  <rect x="210" y="390" width="8" height="8" rx="4" fill="#e74c3c"/>
+  <text x="223" y="398" font-family="Arial, sans-serif" font-size="9" fill="#666">Destination</text>
+
+  <!-- Delivery Stats -->
+  <rect x="500" y="110" width="260" height="90" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="520" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Today's Summary</text>
+
+  <text x="520" y="168" font-family="Arial, sans-serif" font-size="11" fill="#666">Deliveries</text>
+  <text x="520" y="188" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#05445E">24 / 32</text>
+
+  <text x="650" y="168" font-family="Arial, sans-serif" font-size="11" fill="#666">On-Time</text>
+  <text x="650" y="188" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2ecc71">94.2%</text>
+
+  <!-- Active Deliveries List -->
+  <rect x="500" y="215" width="260" height="195" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="520" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Active Deliveries</text>
+
+  <!-- Delivery Item 1 -->
+  <rect x="515" y="260" width="230" height="55" rx="8" fill="#D4F1F4"/>
+  <text x="530" y="280" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">DO-2458 · MH-12-AB-1234</text>
+  <text x="530" y="300" font-family="Arial, sans-serif" font-size="9" fill="#666">Mumbai to Delhi · TMT 500MT</text>
+  <rect x="690" y="270" width="48" height="16" rx="8" fill="#189AB4"/>
+  <text x="714" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#FFFFFF">65%</text>
+
+  <!-- Delivery Item 2 -->
+  <rect x="515" y="322" width="230" height="55" rx="8" fill="#F8F8F8"/>
+  <text x="530" y="342" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">DO-2459 · GJ-05-CD-5678</text>
+  <text x="530" y="362" font-family="Arial, sans-serif" font-size="9" fill="#666">Pune to Ahmedabad · Steel</text>
+  <rect x="690" y="332" width="48" height="16" rx="8" fill="#f39c12"/>
+  <text x="714" y="344" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#FFFFFF">30%</text>
+
+  <!-- Delivery Item 3 -->
+  <rect x="515" y="384" width="230" height="20" rx="8" fill="#D4F1F4"/>
+  <text x="530" y="398" font-family="Arial, sans-serif" font-size="9" fill="#666">+ 6 more active deliveries</text>
+
+  <!-- Challan Section -->
+  <rect x="40" y="430" width="350" height="150" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="60" y="460" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Recent Challans</text>
+
+  <!-- Challan Row 1 -->
+  <rect x="55" y="475" width="320" height="32" rx="6" fill="#D4F1F4"/>
+  <text x="70" y="495" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">CH-1284</text>
+  <text x="140" y="495" font-family="Arial, sans-serif" font-size="10" fill="#666">Sharma Ind.</text>
+  <text x="250" y="495" font-family="Arial, sans-serif" font-size="10" fill="#333">25.4 MT</text>
+  <rect x="310" y="483" width="55" height="18" rx="9" fill="#2ecc71" opacity="0.2"/>
+  <text x="337" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">Verified</text>
+
+  <!-- Challan Row 2 -->
+  <rect x="55" y="515" width="320" height="32" rx="6" fill="#F8F8F8"/>
+  <text x="70" y="535" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">CH-1283</text>
+  <text x="140" y="535" font-family="Arial, sans-serif" font-size="10" fill="#666">Patel Const.</text>
+  <text x="250" y="535" font-family="Arial, sans-serif" font-size="10" fill="#333">18.2 MT</text>
+  <rect x="310" y="523" width="55" height="18" rx="9" fill="#75E6DA" opacity="0.4"/>
+  <text x="337" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#05445E">Printed</text>
+
+  <!-- Challan Row 3 -->
+  <rect x="55" y="555" width="320" height="32" rx="6" fill="#D4F1F4"/>
+  <text x="70" y="575" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">CH-1282</text>
+  <text x="140" y="575" font-family="Arial, sans-serif" font-size="10" fill="#666">Kumar Trd.</text>
+  <text x="250" y="575" font-family="Arial, sans-serif" font-size="10" fill="#333">32.8 MT</text>
+  <rect x="310" y="563" width="55" height="18" rx="9" fill="#f39c12" opacity="0.2"/>
+  <text x="337" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e67e22">Pending</text>
+
+  <!-- Weight Tracking -->
+  <rect x="410" y="430" width="350" height="150" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="430" y="460" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Weight Verification</text>
+
+  <!-- Weight Gauge -->
+  <path d="M490,550 A65,65 0 0,1 620,550" fill="none" stroke="#E8E8E8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M490,550 A65,65 0 0,1 600,495" fill="none" stroke="#75E6DA" stroke-width="12" stroke-linecap="round"/>
+  <text x="555" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#05445E">24.8</text>
+  <text x="555" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">MT loaded</text>
+
+  <!-- Weight Stats - properly spaced -->
+  <text x="660" y="488" font-family="Arial, sans-serif" font-size="10" fill="#999">Gross Weight</text>
+  <text x="660" y="508" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">38.2 MT</text>
+
+  <text x="660" y="535" font-family="Arial, sans-serif" font-size="10" fill="#999">Tare Weight</text>
+  <text x="660" y="555" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">13.4 MT</text>
+
+  <line x1="650" y1="565" x2="745" y2="565" stroke="#2ecc71" stroke-width="1.5"/>
+  <text x="660" y="580" font-family="Arial, sans-serif" font-size="10" fill="#2ecc71" font-weight="bold">Net: 24.8 MT</text>
+</svg>

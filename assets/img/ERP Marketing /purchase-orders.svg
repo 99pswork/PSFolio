@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" rx="20" fill="#D4F1F4"/>
+
+  <!-- Title Bar -->
+  <rect x="40" y="30" width="720" height="60" rx="12" fill="#05445E"/>
+  <text x="400" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Purchase Order Management</text>
+
+  <!-- PO Document Illustration -->
+  <rect x="40" y="110" width="360" height="370" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Document Header -->
+  <rect x="55" y="125" width="330" height="50" rx="8" fill="#05445E"/>
+  <text x="75" y="148" font-family="Arial, sans-serif" font-size="10" fill="#75E6DA">PURCHASE ORDER</text>
+  <text x="75" y="166" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">#PO-2026-0458</text>
+  <rect x="300" y="135" width="70" height="28" rx="14" fill="#75E6DA"/>
+  <text x="335" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">Approved</text>
+
+  <!-- Supplier Info -->
+  <text x="65" y="200" font-family="Arial, sans-serif" font-size="10" fill="#999">SUPPLIER</text>
+  <text x="65" y="216" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#05445E">Tata Steel Industries Pvt Ltd</text>
+  <text x="65" y="232" font-family="Arial, sans-serif" font-size="10" fill="#666">Mumbai, Maharashtra</text>
+
+  <text x="280" y="200" font-family="Arial, sans-serif" font-size="10" fill="#999">DATE</text>
+  <text x="280" y="216" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#05445E">22 Mar 2026</text>
+
+  <!-- Line Items Header -->
+  <rect x="55" y="248" width="330" height="22" rx="4" fill="#D4F1F4"/>
+  <text x="70" y="263" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">Item</text>
+  <text x="190" y="263" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">Qty</text>
+  <text x="250" y="263" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">Rate</text>
+  <text x="370" y="263" text-anchor="end" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">Amount</text>
+
+  <!-- Line Item 1 -->
+  <text x="70" y="288" font-family="Arial, sans-serif" font-size="10" fill="#333">TMT Bar 8mm</text>
+  <text x="190" y="288" font-family="Arial, sans-serif" font-size="10" fill="#333">500 MT</text>
+  <text x="250" y="288" font-family="Arial, sans-serif" font-size="10" fill="#333">₹52,000</text>
+  <text x="370" y="288" text-anchor="end" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">₹2.60 Cr</text>
+  <line x1="55" y1="296" x2="385" y2="296" stroke="#F0F0F0" stroke-width="1"/>
+
+  <!-- Line Item 2 -->
+  <text x="70" y="314" font-family="Arial, sans-serif" font-size="10" fill="#333">TMT Bar 10mm</text>
+  <text x="190" y="314" font-family="Arial, sans-serif" font-size="10" fill="#333">300 MT</text>
+  <text x="250" y="314" font-family="Arial, sans-serif" font-size="10" fill="#333">₹51,500</text>
+  <text x="370" y="314" text-anchor="end" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">₹1.54 Cr</text>
+  <line x1="55" y1="322" x2="385" y2="322" stroke="#F0F0F0" stroke-width="1"/>
+
+  <!-- Line Item 3 -->
+  <text x="70" y="340" font-family="Arial, sans-serif" font-size="10" fill="#333">Steel Plate 6mm</text>
+  <text x="190" y="340" font-family="Arial, sans-serif" font-size="10" fill="#333">200 MT</text>
+  <text x="250" y="340" font-family="Arial, sans-serif" font-size="10" fill="#333">₹58,000</text>
+  <text x="370" y="340" text-anchor="end" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">₹1.16 Cr</text>
+
+  <!-- Total Section -->
+  <rect x="55" y="358" width="330" height="2" fill="#05445E"/>
+
+  <text x="230" y="382" font-family="Arial, sans-serif" font-size="11" fill="#666">Subtotal:</text>
+  <text x="370" y="382" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#333">₹5.30 Cr</text>
+
+  <text x="230" y="402" font-family="Arial, sans-serif" font-size="11" fill="#666">GST (18%):</text>
+  <text x="370" y="402" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#333">₹95.49 L</text>
+
+  <rect x="220" y="412" width="165" height="2" fill="#189AB4"/>
+
+  <text x="230" y="432" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#05445E">Total:</text>
+  <text x="370" y="432" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#05445E">₹6.26 Cr</text>
+
+  <!-- Stamp -->
+  <circle cx="110" cy="450" r="22" fill="none" stroke="#189AB4" stroke-width="2" opacity="0.5"/>
+  <text x="110" y="447" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#189AB4" opacity="0.6">APPROVED</text>
+  <text x="110" y="457" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#189AB4" opacity="0.6">22-03-2026</text>
+
+  <!-- PO Workflow -->
+  <rect x="420" y="110" width="340" height="170" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="440" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Purchase Workflow</text>
+
+  <!-- Flow Steps -->
+  <circle cx="470" cy="180" r="18" fill="#75E6DA" stroke="#05445E" stroke-width="2"/>
+  <text x="470" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">1</text>
+  <text x="470" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Advice</text>
+
+  <line x1="488" y1="180" x2="518" y2="180" stroke="#189AB4" stroke-width="2" stroke-dasharray="4,2"/>
+  <polygon points="516,176 524,180 516,184" fill="#189AB4"/>
+
+  <circle cx="545" cy="180" r="18" fill="#75E6DA" stroke="#05445E" stroke-width="2"/>
+  <text x="545" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">2</text>
+  <text x="545" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Create</text>
+
+  <line x1="563" y1="180" x2="593" y2="180" stroke="#189AB4" stroke-width="2" stroke-dasharray="4,2"/>
+  <polygon points="591,176 599,180 591,184" fill="#189AB4"/>
+
+  <circle cx="620" cy="180" r="18" fill="#189AB4" stroke="#05445E" stroke-width="2"/>
+  <text x="620" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#FFFFFF">3</text>
+  <text x="620" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Approve</text>
+
+  <line x1="638" y1="180" x2="668" y2="180" stroke="#189AB4" stroke-width="2" stroke-dasharray="4,2"/>
+  <polygon points="666,176 674,180 666,184" fill="#189AB4"/>
+
+  <circle cx="695" cy="180" r="18" fill="#05445E" stroke="#05445E" stroke-width="2"/>
+  <text x="695" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#FFFFFF">4</text>
+  <text x="695" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Delivery</text>
+
+  <!-- Current Step Indicator -->
+  <text x="620" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#189AB4" font-weight="bold">Current Step</text>
+
+  <!-- PO Stats -->
+  <rect x="420" y="300" width="160" height="80" rx="12" fill="#05445E"/>
+  <text x="500" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#75E6DA">Active POs</text>
+  <text x="500" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">47</text>
+
+  <rect x="600" y="300" width="160" height="80" rx="12" fill="#189AB4"/>
+  <text x="680" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#D4F1F4">This Month</text>
+  <text x="680" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">₹18.5Cr</text>
+
+  <!-- Supplier Performance -->
+  <rect x="420" y="400" width="340" height="180" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="440" y="430" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Top Suppliers</text>
+
+  <!-- Supplier 1 -->
+  <rect x="435" y="445" width="24" height="24" rx="12" fill="#75E6DA"/>
+  <text x="447" y="461" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#05445E">T</text>
+  <text x="470" y="455" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Tata Steel Industries</text>
+  <text x="470" y="468" font-family="Arial, sans-serif" font-size="9" fill="#999">12 POs · ₹6.2Cr</text>
+  <rect x="690" y="448" width="55" height="20" rx="10" fill="#D4F1F4"/>
+  <text x="717" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">98%</text>
+
+  <!-- Supplier 2 -->
+  <rect x="435" y="482" width="24" height="24" rx="12" fill="#189AB4"/>
+  <text x="447" y="498" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">J</text>
+  <text x="470" y="492" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">JSW Steel Limited</text>
+  <text x="470" y="505" font-family="Arial, sans-serif" font-size="9" fill="#999">8 POs · ₹4.8Cr</text>
+  <rect x="690" y="485" width="55" height="20" rx="10" fill="#D4F1F4"/>
+  <text x="717" y="499" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">95%</text>
+
+  <!-- Supplier 3 -->
+  <rect x="435" y="519" width="24" height="24" rx="12" fill="#05445E"/>
+  <text x="447" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">S</text>
+  <text x="470" y="529" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">SAIL Bokaro Plant</text>
+  <text x="470" y="542" font-family="Arial, sans-serif" font-size="9" fill="#999">6 POs · ₹3.1Cr</text>
+  <rect x="690" y="522" width="55" height="20" rx="10" fill="#D4F1F4"/>
+  <text x="717" y="536" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">92%</text>
+
+  <!-- Supplier 4 -->
+  <rect x="435" y="556" width="24" height="24" rx="12" fill="#75E6DA"/>
+  <text x="447" y="572" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#05445E">R</text>
+  <text x="470" y="566" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Rathi Group</text>
+  <text x="470" y="579" font-family="Arial, sans-serif" font-size="9" fill="#999">5 POs · ₹2.4Cr</text>
+  <rect x="690" y="559" width="55" height="20" rx="10" fill="#D4F1F4"/>
+  <text x="717" y="573" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">89%</text>
+</svg>

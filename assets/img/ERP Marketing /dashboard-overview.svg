@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" rx="20" fill="#D4F1F4"/>
+
+  <!-- Title Bar -->
+  <rect x="40" y="30" width="720" height="60" rx="12" fill="#05445E"/>
+  <text x="400" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">ERP Dashboard</text>
+
+  <!-- KPI Cards Row -->
+  <!-- Revenue Card -->
+  <rect x="40" y="110" width="165" height="100" rx="12" fill="#FFFFFF" stroke="#75E6DA" stroke-width="2"/>
+  <rect x="40" y="110" width="165" height="6" rx="3" fill="#75E6DA"/>
+  <text x="122" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#189AB4">Total Revenue</text>
+  <text x="122" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#05445E">₹24.5L</text>
+  <text x="122" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2ecc71">▲ 12.5%</text>
+
+  <!-- Orders Card -->
+  <rect x="225" y="110" width="165" height="100" rx="12" fill="#FFFFFF" stroke="#75E6DA" stroke-width="2"/>
+  <rect x="225" y="110" width="165" height="6" rx="3" fill="#189AB4"/>
+  <text x="307" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#189AB4">Total Orders</text>
+  <text x="307" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#05445E">1,284</text>
+  <text x="307" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2ecc71">▲ 8.3%</text>
+
+  <!-- Customers Card -->
+  <rect x="410" y="110" width="165" height="100" rx="12" fill="#FFFFFF" stroke="#75E6DA" stroke-width="2"/>
+  <rect x="410" y="110" width="165" height="6" rx="3" fill="#75E6DA"/>
+  <text x="492" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#189AB4">Customers</text>
+  <text x="492" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#05445E">358</text>
+  <text x="492" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#2ecc71">▲ 5.1%</text>
+
+  <!-- Inventory Card -->
+  <rect x="595" y="110" width="165" height="100" rx="12" fill="#FFFFFF" stroke="#75E6DA" stroke-width="2"/>
+  <rect x="595" y="110" width="165" height="6" rx="3" fill="#189AB4"/>
+  <text x="677" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#189AB4">Stock Items</text>
+  <text x="677" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#05445E">4,720</text>
+  <text x="677" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">▼ 2.1%</text>
+
+  <!-- Sales Chart Area -->
+  <rect x="40" y="230" width="440" height="240" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="60" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Sales Trend</text>
+
+  <!-- Chart Grid Lines -->
+  <line x1="80" y1="280" x2="460" y2="280" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="80" y1="310" x2="460" y2="310" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="80" y1="340" x2="460" y2="340" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="80" y1="370" x2="460" y2="370" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="80" y1="400" x2="460" y2="400" stroke="#F0F0F0" stroke-width="1"/>
+  <line x1="80" y1="430" x2="460" y2="430" stroke="#F0F0F0" stroke-width="1"/>
+
+  <!-- Area Chart Fill -->
+  <path d="M80,420 L130,390 L180,400 L230,360 L280,340 L330,310 L380,320 L430,290 L460,285 L460,440 L80,440 Z" fill="#75E6DA" opacity="0.2"/>
+  <!-- Line Chart -->
+  <polyline points="80,420 130,390 180,400 230,360 280,340 330,310 380,320 430,290 460,285" stroke="#189AB4" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Data Points -->
+  <circle cx="80" cy="420" r="4" fill="#05445E"/>
+  <circle cx="130" cy="390" r="4" fill="#05445E"/>
+  <circle cx="180" cy="400" r="4" fill="#05445E"/>
+  <circle cx="230" cy="360" r="4" fill="#05445E"/>
+  <circle cx="280" cy="340" r="4" fill="#05445E"/>
+  <circle cx="330" cy="310" r="4" fill="#05445E"/>
+  <circle cx="380" cy="320" r="4" fill="#05445E"/>
+  <circle cx="430" cy="290" r="4" fill="#05445E"/>
+  <circle cx="460" cy="285" r="5" fill="#189AB4" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- Month Labels -->
+  <text x="80" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Jan</text>
+  <text x="130" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Feb</text>
+  <text x="180" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Mar</text>
+  <text x="230" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Apr</text>
+  <text x="280" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">May</text>
+  <text x="330" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Jun</text>
+  <text x="380" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Jul</text>
+  <text x="430" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Aug</text>
+
+  <!-- Donut Chart Area -->
+  <rect x="500" y="230" width="260" height="240" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="520" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Order Status</text>
+
+  <!-- Donut Chart -->
+  <circle cx="630" cy="350" r="65" fill="none" stroke="#E8E8E8" stroke-width="22"/>
+  <circle cx="630" cy="350" r="65" fill="none" stroke="#75E6DA" stroke-width="22" stroke-dasharray="245 408" stroke-dashoffset="0" transform="rotate(-90 630 350)"/>
+  <circle cx="630" cy="350" r="65" fill="none" stroke="#189AB4" stroke-width="22" stroke-dasharray="102 408" stroke-dashoffset="-245" transform="rotate(-90 630 350)"/>
+  <circle cx="630" cy="350" r="65" fill="none" stroke="#05445E" stroke-width="22" stroke-dasharray="41 408" stroke-dashoffset="-347" transform="rotate(-90 630 350)"/>
+  <circle cx="630" cy="350" r="46" fill="#FFFFFF"/>
+  <text x="630" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#05445E">1,284</text>
+  <text x="630" y="363" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Total</text>
+
+  <!-- Legend - stacked vertically for clarity -->
+  <rect x="515" y="432" width="10" height="10" rx="2" fill="#75E6DA"/>
+  <text x="530" y="442" font-family="Arial, sans-serif" font-size="10" fill="#666">Delivered 60%</text>
+
+  <rect x="615" y="432" width="10" height="10" rx="2" fill="#189AB4"/>
+  <text x="630" y="442" font-family="Arial, sans-serif" font-size="10" fill="#666">Pending 25%</text>
+
+  <rect x="715" y="432" width="10" height="10" rx="2" fill="#05445E"/>
+  <text x="730" y="442" font-family="Arial, sans-serif" font-size="10" fill="#666">Other</text>
+
+  <!-- Recent Orders Table -->
+  <rect x="40" y="490" width="720" height="90" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="60" y="518" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Recent Orders</text>
+
+  <!-- Table Header -->
+  <rect x="55" y="528" width="690" height="22" rx="4" fill="#D4F1F4"/>
+  <text x="75" y="543" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">Order ID</text>
+  <text x="190" y="543" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">Customer</text>
+  <text x="370" y="543" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">Amount</text>
+  <text x="500" y="543" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">Date</text>
+  <text x="640" y="543" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">Status</text>
+
+  <!-- Table Row -->
+  <text x="75" y="565" font-family="Arial, sans-serif" font-size="10" fill="#333">#ORD-2458</text>
+  <text x="190" y="565" font-family="Arial, sans-serif" font-size="10" fill="#333">Sharma Industries</text>
+  <text x="370" y="565" font-family="Arial, sans-serif" font-size="10" fill="#333">₹1,85,400</text>
+  <text x="500" y="565" font-family="Arial, sans-serif" font-size="10" fill="#333">22 Mar 2026</text>
+  <rect x="635" y="555" width="70" height="18" rx="9" fill="#75E6DA" opacity="0.3"/>
+  <text x="670" y="567" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">Delivered</text>
+</svg>

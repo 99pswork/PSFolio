@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" rx="20" fill="#D4F1F4"/>
+
+  <!-- Title Bar -->
+  <rect x="40" y="30" width="720" height="60" rx="12" fill="#05445E"/>
+  <text x="400" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Inventory &amp; Warehouse</text>
+
+  <!-- Warehouse Illustration -->
+  <rect x="40" y="110" width="350" height="280" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="60" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Warehouse Overview</text>
+
+  <!-- Warehouse Building -->
+  <polygon points="215,170 115,210 315,210" fill="#05445E"/>
+  <rect x="130" y="210" width="170" height="110" fill="#189AB4" rx="4"/>
+  <rect x="130" y="210" width="170" height="110" fill="url(#warehouseGrad)" rx="4"/>
+
+  <!-- Warehouse Door -->
+  <rect x="190" y="260" width="50" height="60" rx="4" fill="#05445E"/>
+  <circle cx="232" cy="290" r="3" fill="#75E6DA"/>
+
+  <!-- Windows -->
+  <rect x="145" y="225" width="28" height="22" rx="3" fill="#D4F1F4" opacity="0.8"/>
+  <rect x="257" y="225" width="28" height="22" rx="3" fill="#D4F1F4" opacity="0.8"/>
+
+  <!-- Shelves/Boxes -->
+  <rect x="70" y="280" width="40" height="30" rx="4" fill="#75E6DA" stroke="#05445E" stroke-width="1.5"/>
+  <rect x="80" y="260" width="35" height="25" rx="4" fill="#189AB4" stroke="#05445E" stroke-width="1.5"/>
+  <rect x="320" y="275" width="40" height="35" rx="4" fill="#75E6DA" stroke="#05445E" stroke-width="1.5"/>
+  <rect x="330" y="255" width="30" height="25" rx="4" fill="#189AB4" stroke="#05445E" stroke-width="1.5"/>
+  <rect x="310" y="240" width="25" height="20" rx="4" fill="#D4F1F4" stroke="#05445E" stroke-width="1.5"/>
+
+  <!-- Forklift simplified -->
+  <rect x="60" y="340" width="50" height="25" rx="4" fill="#05445E"/>
+  <rect x="52" y="320" width="12" height="45" rx="2" fill="#189AB4"/>
+  <circle cx="70" cy="370" r="8" fill="#333" stroke="#666" stroke-width="2"/>
+  <circle cx="100" cy="370" r="8" fill="#333" stroke="#666" stroke-width="2"/>
+
+  <!-- Stock Level Indicators -->
+  <rect x="410" y="110" width="350" height="140" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="430" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Stock Levels</text>
+
+  <!-- Stock Bar 1 - High -->
+  <text x="430" y="168" font-family="Arial, sans-serif" font-size="11" fill="#666">TMT Bars (8mm)</text>
+  <text x="740" y="168" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#05445E" font-weight="bold">85%</text>
+  <rect x="430" y="176" width="300" height="12" rx="6" fill="#E8E8E8"/>
+  <rect x="430" y="176" width="255" height="12" rx="6" fill="#75E6DA"/>
+
+  <!-- Stock Bar 2 - Medium -->
+  <text x="430" y="208" font-family="Arial, sans-serif" font-size="11" fill="#666">Cement (OPC 53)</text>
+  <text x="740" y="208" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#05445E" font-weight="bold">56%</text>
+  <rect x="430" y="216" width="300" height="12" rx="6" fill="#E8E8E8"/>
+  <rect x="430" y="216" width="168" height="12" rx="6" fill="#189AB4"/>
+
+  <!-- Stock Bar 3 - Low -->
+  <text x="430" y="246" font-family="Arial, sans-serif" font-size="11" fill="#666">Steel Plates (6mm)</text>
+  <text x="740" y="246" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c" font-weight="bold">18%</text>
+  <rect x="430" y="254" width="300" height="12" rx="6" fill="#E8E8E8"/>
+  <rect x="430" y="254" width="54" height="12" rx="6" fill="#e74c3c"/>
+
+  <!-- Inventory Summary Cards -->
+  <rect x="410" y="270" width="165" height="80" rx="12" fill="#FFFFFF" stroke="#75E6DA" stroke-width="2"/>
+  <text x="492" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#189AB4">Total Products</text>
+  <text x="492" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#05445E">4,720</text>
+
+  <rect x="595" y="270" width="165" height="80" rx="12" fill="#FFFFFF" stroke="#189AB4" stroke-width="2"/>
+  <text x="677" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#189AB4">Low Stock Alerts</text>
+  <text x="677" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e74c3c">23</text>
+
+  <!-- Warehouse Locations -->
+  <rect x="410" y="370" width="350" height="30" rx="8" fill="#05445E"/>
+  <text x="585" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">Warehouse Locations</text>
+
+  <rect x="410" y="410" width="108" height="70" rx="8" fill="#FFFFFF" stroke="#75E6DA" stroke-width="1.5"/>
+  <text x="464" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#05445E">Mumbai</text>
+  <text x="464" y="457" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#189AB4">1,850</text>
+  <text x="464" y="472" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">items</text>
+
+  <rect x="530" y="410" width="108" height="70" rx="8" fill="#FFFFFF" stroke="#75E6DA" stroke-width="1.5"/>
+  <text x="584" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#05445E">Delhi</text>
+  <text x="584" y="457" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#189AB4">1,420</text>
+  <text x="584" y="472" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">items</text>
+
+  <rect x="650" y="410" width="108" height="70" rx="8" fill="#FFFFFF" stroke="#75E6DA" stroke-width="1.5"/>
+  <text x="704" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#05445E">Pune</text>
+  <text x="704" y="457" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#189AB4">1,450</text>
+  <text x="704" y="472" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">items</text>
+
+  <!-- Transfer Activity -->
+  <rect x="40" y="410" width="350" height="170" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="60" y="440" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Recent Transfers</text>
+
+  <!-- Transfer Row 1 -->
+  <rect x="55" y="455" width="320" height="35" rx="6" fill="#D4F1F4"/>
+  <text x="70" y="477" font-family="Arial, sans-serif" font-size="11" fill="#05445E">Mumbai to Delhi</text>
+  <text x="210" y="477" font-family="Arial, sans-serif" font-size="11" fill="#666">250 units</text>
+  <rect x="300" y="463" width="65" height="18" rx="9" fill="#75E6DA" opacity="0.5"/>
+  <text x="332" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">In Transit</text>
+
+  <!-- Transfer Row 2 -->
+  <rect x="55" y="498" width="320" height="35" rx="6" fill="#F8F8F8"/>
+  <text x="70" y="520" font-family="Arial, sans-serif" font-size="11" fill="#05445E">Pune to Mumbai</text>
+  <text x="210" y="520" font-family="Arial, sans-serif" font-size="11" fill="#666">180 units</text>
+  <rect x="300" y="506" width="65" height="18" rx="9" fill="#2ecc71" opacity="0.3"/>
+  <text x="332" y="518" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Complete</text>
+
+  <!-- Transfer Row 3 -->
+  <rect x="55" y="541" width="320" height="35" rx="6" fill="#D4F1F4"/>
+  <text x="70" y="563" font-family="Arial, sans-serif" font-size="11" fill="#05445E">Delhi to Pune</text>
+  <text x="210" y="563" font-family="Arial, sans-serif" font-size="11" fill="#666">120 units</text>
+  <rect x="300" y="549" width="65" height="18" rx="9" fill="#f39c12" opacity="0.3"/>
+  <text x="332" y="561" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e67e22">Pending</text>
+
+  <!-- Bottom Stats Bar -->
+  <rect x="410" y="500" width="350" height="80" rx="12" fill="#05445E"/>
+  <text x="460" y="528" font-family="Arial, sans-serif" font-size="11" fill="#75E6DA">Total Value</text>
+  <text x="460" y="553" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">₹3.2 Cr</text>
+  <line x1="570" y1="515" x2="570" y2="565" stroke="#189AB4" stroke-width="1" opacity="0.5"/>
+  <text x="600" y="528" font-family="Arial, sans-serif" font-size="11" fill="#75E6DA">Warehouses</text>
+  <text x="600" y="553" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">6</text>
+  <line x1="650" y1="515" x2="650" y2="565" stroke="#189AB4" stroke-width="1" opacity="0.5"/>
+  <text x="690" y="528" font-family="Arial, sans-serif" font-size="11" fill="#75E6DA">Categories</text>
+  <text x="690" y="553" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">48</text>
+
+  <defs>
+    <linearGradient id="warehouseGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#189AB4"/>
+      <stop offset="100%" stop-color="#05445E" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+</svg>

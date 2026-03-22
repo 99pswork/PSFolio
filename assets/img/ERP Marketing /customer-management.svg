@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" rx="20" fill="#D4F1F4"/>
+
+  <!-- Title Bar -->
+  <rect x="40" y="30" width="720" height="60" rx="12" fill="#05445E"/>
+  <text x="400" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Customer Management</text>
+
+  <!-- Customer Profile Card -->
+  <rect x="40" y="110" width="340" height="220" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Avatar -->
+  <circle cx="100" cy="170" r="35" fill="#05445E"/>
+  <text x="100" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">SI</text>
+
+  <!-- Customer Info -->
+  <text x="150" y="148" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#05445E">Sharma Industries</text>
+  <text x="150" y="168" font-family="Arial, sans-serif" font-size="11" fill="#666">Construction &amp; Infra</text>
+  <rect x="150" y="178" width="55" height="18" rx="9" fill="#75E6DA" opacity="0.5"/>
+  <text x="177" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#05445E">Premium</text>
+  <rect x="212" y="178" width="50" height="18" rx="9" fill="#2ecc71" opacity="0.2"/>
+  <text x="237" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Active</text>
+
+  <!-- Contact Details -->
+  <line x1="55" y1="210" x2="365" y2="210" stroke="#F0F0F0" stroke-width="1"/>
+  <text x="65" y="232" font-family="Arial, sans-serif" font-size="10" fill="#999">sharma.industries@email.com</text>
+  <text x="65" y="250" font-family="Arial, sans-serif" font-size="10" fill="#999">+91 98765 43210</text>
+  <text x="65" y="268" font-family="Arial, sans-serif" font-size="10" fill="#999">Andheri East, Mumbai, MH</text>
+
+  <!-- Customer Stats -->
+  <rect x="55" y="280" width="85" height="40" rx="6" fill="#D4F1F4"/>
+  <text x="97" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Orders</text>
+  <text x="97" y="314" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">128</text>
+
+  <rect x="150" y="280" width="85" height="40" rx="6" fill="#D4F1F4"/>
+  <text x="192" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Revenue</text>
+  <text x="192" y="314" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">₹42L</text>
+
+  <rect x="245" y="280" width="85" height="40" rx="6" fill="#D4F1F4"/>
+  <text x="287" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Since</text>
+  <text x="287" y="314" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">2022</text>
+
+  <!-- Customer List -->
+  <rect x="400" y="110" width="360" height="220" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="420" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">All Customers</text>
+
+  <!-- Search Bar -->
+  <rect x="415" y="152" width="330" height="28" rx="14" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="435" y="170" font-family="Arial, sans-serif" font-size="11" fill="#BBB">Search customers...</text>
+
+  <!-- Customer List Items -->
+  <rect x="415" y="190" width="330" height="40" rx="6" fill="#D4F1F4"/>
+  <circle cx="440" cy="210" r="14" fill="#05445E"/>
+  <text x="440" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FFFFFF">SI</text>
+  <text x="462" y="205" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#05445E">Sharma Industries</text>
+  <text x="462" y="220" font-family="Arial, sans-serif" font-size="9" fill="#666">128 orders · ₹42L</text>
+  <rect x="700" y="200" width="35" height="18" rx="9" fill="#2ecc71" opacity="0.3"/>
+  <text x="717" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">Active</text>
+
+  <rect x="415" y="236" width="330" height="40" rx="6" fill="#F8F8F8"/>
+  <circle cx="440" cy="256" r="14" fill="#189AB4"/>
+  <text x="440" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FFFFFF">PC</text>
+  <text x="462" y="251" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#05445E">Patel Construction</text>
+  <text x="462" y="266" font-family="Arial, sans-serif" font-size="9" fill="#666">95 orders · ₹35L</text>
+  <rect x="700" y="246" width="35" height="18" rx="9" fill="#2ecc71" opacity="0.3"/>
+  <text x="717" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">Active</text>
+
+  <rect x="415" y="282" width="330" height="40" rx="6" fill="#D4F1F4"/>
+  <circle cx="440" cy="302" r="14" fill="#75E6DA"/>
+  <text x="440" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#05445E">KT</text>
+  <text x="462" y="297" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#05445E">Kumar Traders</text>
+  <text x="462" y="312" font-family="Arial, sans-serif" font-size="9" fill="#666">72 orders · ₹28L</text>
+  <rect x="700" y="292" width="35" height="18" rx="9" fill="#2ecc71" opacity="0.3"/>
+  <text x="717" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">Active</text>
+
+  <!-- Customer Segments -->
+  <rect x="40" y="350" width="340" height="230" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="60" y="380" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Customer Segments</text>
+
+  <!-- Horizontal Bar Chart -->
+  <text x="60" y="412" font-family="Arial, sans-serif" font-size="10" fill="#666">Premium</text>
+  <rect x="130" y="400" width="195" height="16" rx="8" fill="#E8E8E8"/>
+  <rect x="130" y="400" width="156" height="16" rx="8" fill="#05445E"/>
+  <text x="335" y="412" font-family="Arial, sans-serif" font-size="9" fill="#05445E" font-weight="bold">45</text>
+
+  <text x="60" y="445" font-family="Arial, sans-serif" font-size="10" fill="#666">Regular</text>
+  <rect x="130" y="433" width="195" height="16" rx="8" fill="#E8E8E8"/>
+  <rect x="130" y="433" width="117" height="16" rx="8" fill="#189AB4"/>
+  <text x="335" y="445" font-family="Arial, sans-serif" font-size="9" fill="#189AB4" font-weight="bold">168</text>
+
+  <text x="60" y="478" font-family="Arial, sans-serif" font-size="10" fill="#666">New</text>
+  <rect x="130" y="466" width="195" height="16" rx="8" fill="#E8E8E8"/>
+  <rect x="130" y="466" width="78" height="16" rx="8" fill="#75E6DA"/>
+  <text x="335" y="478" font-family="Arial, sans-serif" font-size="9" fill="#189AB4" font-weight="bold">85</text>
+
+  <text x="60" y="511" font-family="Arial, sans-serif" font-size="10" fill="#666">Inactive</text>
+  <rect x="130" y="499" width="195" height="16" rx="8" fill="#E8E8E8"/>
+  <rect x="130" y="499" width="39" height="16" rx="8" fill="#e74c3c" opacity="0.6"/>
+  <text x="335" y="511" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c" font-weight="bold">60</text>
+
+  <!-- Total -->
+  <rect x="55" y="530" width="310" height="40" rx="8" fill="#05445E"/>
+  <text x="100" y="555" font-family="Arial, sans-serif" font-size="11" fill="#75E6DA">Total Customers</text>
+  <text x="320" y="555" text-anchor="end" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">358</text>
+
+  <!-- Recent Activity -->
+  <rect x="400" y="350" width="360" height="230" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="420" y="380" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#05445E">Recent Activity</text>
+
+  <!-- Activity Items - shortened text to avoid overflow -->
+  <rect x="415" y="398" width="8" height="8" rx="4" fill="#2ecc71"/>
+  <text x="430" y="406" font-family="Arial, sans-serif" font-size="10" fill="#333">New Order - Sharma Ind. #ORD-2458</text>
+  <text x="430" y="422" font-family="Arial, sans-serif" font-size="9" fill="#999">2 hours ago · ₹1,85,400</text>
+
+  <rect x="415" y="438" width="8" height="8" rx="4" fill="#189AB4"/>
+  <text x="430" y="446" font-family="Arial, sans-serif" font-size="10" fill="#333">Payment - Patel Const. cleared inv.</text>
+  <text x="430" y="462" font-family="Arial, sans-serif" font-size="9" fill="#999">5 hours ago · ₹3,42,000</text>
+
+  <rect x="415" y="478" width="8" height="8" rx="4" fill="#75E6DA"/>
+  <text x="430" y="486" font-family="Arial, sans-serif" font-size="10" fill="#333">Inquiry - Kumar Trd. quote request</text>
+  <text x="430" y="502" font-family="Arial, sans-serif" font-size="9" fill="#999">Yesterday · TMT Bars 200MT</text>
+
+  <rect x="415" y="518" width="8" height="8" rx="4" fill="#f39c12"/>
+  <text x="430" y="526" font-family="Arial, sans-serif" font-size="10" fill="#333">Follow-up - Gupta Builders pending</text>
+  <text x="430" y="542" font-family="Arial, sans-serif" font-size="9" fill="#999">2 days ago · Quote #Q-0892</text>
+
+  <rect x="415" y="556" width="8" height="8" rx="4" fill="#05445E"/>
+  <text x="430" y="564" font-family="Arial, sans-serif" font-size="10" fill="#333">New Customer - Reddy Const.</text>
+  <text x="430" y="578" font-family="Arial, sans-serif" font-size="9" fill="#999">3 days ago · Hyderabad, TG</text>
+</svg>
