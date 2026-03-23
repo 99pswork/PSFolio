@@ -395,106 +395,121 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about-mf sect-pt4 route">
       <div class="container">
-        <div class="bento-grid">
 
-          <!-- Profile Card -->
-          <div class="bento-card bento-card--lg">
-            <div class="profile-card">
-              <div class="profile-image">
-                <img src="assets/img/pranjal.jpeg" alt="Pranjal Surana - AI Solutions, Software Solutions & ERP Development Expert" loading="eager">
-              </div>
-              <h3 class="profile-name">Pranjal Surana</h3>
-              <p class="profile-title">AI Solutions & Software Solutions Expert</p>
-              <div class="profile-info">
-                <p class="profile-email"><i class="bi bi-envelope"></i> 99ps.work@gmail.com</p>
-              </div>
-              <div class="profile-social">
-                <a href="https://www.linkedin.com/in/pranjal-surana-6005b8138/" target="_blank" rel="noopener" class="social-link">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-              </div>
+        <!-- About Hero: Photo + Info side by side -->
+        <div class="about-hero">
+          <div class="about-hero-left">
+            <div class="profile-image">
+              <img src="assets/img/pranjal.jpeg" alt="Pranjal Surana - AI Solutions, Software Solutions & ERP Development Expert" loading="eager">
             </div>
           </div>
-
-          <!-- Bio Card -->
-          <div class="bento-card bento-card--xl bento-card--tall">
-            <h5 class="bento-title">About Me</h5>
-            <div class="bio-content bio-collapsed">
-              <p>
-                I specialize in delivering comprehensive <strong>AI solutions</strong>, <strong>software solutions</strong>, and <strong>ERP development</strong> services with a proven track record of building scalable enterprise systems. As a full-stack developer with expertise in <strong>AI agents</strong> and intelligent automation, I help businesses transform their operations through cutting-edge technology. My experience includes developing enterprise-grade software solutions at Cisco Systems, working with Java, Spring (REST and SOAP APIs), React, and Next.js.
-              </p>
-              <p>
-                My <strong>AI solutions</strong> portfolio includes building intelligent <strong>AI agents</strong> using LangChain, Vector Databases (Chroma, Weaviate), Supabase, and Retrieval-Augmented Generation (RAG) pipelines for context-aware systems. I create custom <strong>software solutions</strong> that combine structured and unstructured data to deliver dynamic, real-time experiences. Through workflow automation with n8n and Make (Integromat), I accelerate product delivery and enhance data interoperability with low-code orchestration, providing complete <strong>ERP solutions</strong> for business process automation.
-              </p>
-              <p>
-                Beyond <strong>AI and software solutions</strong>, I offer blockchain development services with 20+ DeFi projects that collectively raised $1M+. My comprehensive <strong>software development services</strong> include test automation (50+ Cypress test suites) and Python-based automation scripts that reduced manual effort by 90%. Whether you need <strong>AI agents</strong>, custom <strong>ERP systems</strong>, or complete <strong>software solutions</strong>, I deliver enterprise-grade results.
-              </p>
-            </div>
-            <button class="bio-read-more-btn" onclick="const bio=this.previousElementSibling;bio.classList.toggle('bio-collapsed');this.textContent=bio.classList.contains('bio-collapsed')?'Read More':'Read Less'">Read More</button>
-          </div>
-
-          <!-- Skills Card -->
-          <div class="bento-card bento-card--md">
-            <h5 class="bento-title">Skills</h5>
-            <div class="skills-chips">
-              <span class="skill-chip">Java</span>
-              <span class="skill-chip">React / Next.js</span>
-              <span class="skill-chip">Solidity</span>
-              <span class="skill-chip">Python</span>
-              <span class="skill-chip">Javascript</span>
-              <span class="skill-chip">LangChain</span>
-              <span class="skill-chip">Web3</span>
-              <span class="skill-chip">DeFi</span>
+          <div class="about-hero-right">
+            <h2 class="about-hero-name">Pranjal Surana</h2>
+            <p class="about-hero-title">AI Solutions & Software Solutions Expert</p>
+            <p class="about-hero-bio">
+              I specialize in delivering comprehensive <strong>AI solutions</strong>, <strong>software solutions</strong>, and <strong>ERP development</strong> services with a proven track record of building scalable enterprise systems. As a full-stack developer with expertise in <strong>AI agents</strong> and intelligent automation, I help businesses transform their operations through cutting-edge technology.
+            </p>
+            <p class="about-hero-bio about-hero-bio--extra">
+              My portfolio includes intelligent <strong>AI agents</strong> using LangChain, RAG pipelines, and vector databases, custom <strong>ERP systems</strong> for business process automation, and blockchain development with 20+ DeFi projects that collectively raised $1M+.
+            </p>
+            <div class="about-hero-links">
+              <a href="mailto:99ps.work@gmail.com" class="about-link"><i class="bi bi-envelope"></i> 99ps.work@gmail.com</a>
+              <a href="https://www.linkedin.com/in/pranjal-surana-6005b8138/" target="_blank" rel="noopener" class="about-link"><i class="bi bi-linkedin"></i> LinkedIn</a>
+              <a href="https://x.com/PranjalSur12228" target="_blank" rel="noopener" class="about-link"><i class="bi bi-twitter"></i> Twitter</a>
             </div>
           </div>
+        </div>
 
-          <!-- Stat Card 1: Projects -->
-          <div class="bento-card bento-card--md stat-card">
-            <div class="stat-icon">
-              <i class="bi bi-check-circle"></i>
-            </div>
-            <div class="stat-content">
-              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1">50</div>
-              <div class="stat-label">Projects Completed</div>
-            </div>
+        <!-- Stats Row -->
+        <div class="about-stats">
+          <div class="about-stat-item">
+            <div class="stat-number" data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1">50</div>
+            <div class="stat-label">Projects Completed</div>
           </div>
+          <div class="about-stat-item">
+            <div class="stat-number" data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1">6</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="stat-number" data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1">30</div>
+            <div class="stat-label">Total Clients</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="stat-number" data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1">30</div>
+            <div class="stat-label">5★ Reviews</div>
+          </div>
+        </div>
 
-          <!-- Stat Card 2: Experience -->
-          <div class="bento-card bento-card--md stat-card">
-            <div class="stat-icon">
-              <i class="bi bi-journal-richtext"></i>
-            </div>
-            <div class="stat-content">
-              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1">6</div>
-              <div class="stat-label">Years of Experience</div>
-            </div>
+        <!-- Skills -->
+        <div class="about-skills">
+          <div class="skills-chips">
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">React / Next.js</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">Javascript</span>
+            <span class="skill-chip">LangChain</span>
+            <span class="skill-chip">Solidity</span>
+            <span class="skill-chip">Web3</span>
+            <span class="skill-chip">DeFi</span>
           </div>
+        </div>
 
-          <!-- Stat Card 3: Clients -->
-          <div class="bento-card bento-card--md stat-card">
-            <div class="stat-icon">
-              <i class="bi bi-people"></i>
-            </div>
-            <div class="stat-content">
-              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1">30</div>
-              <div class="stat-label">Total Clients Catered</div>
-            </div>
-          </div>
+      </div>
+    </section><!-- End About Section -->
 
-          <!-- Stat Card 4: Reviews -->
-          <div class="bento-card bento-card--md stat-card">
-            <div class="stat-icon">
-              <i class="bi bi-star-fill"></i>
+    <!-- ======= Products Section ======= -->
+    <section id="products" class="products-section sect-pt4 route">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title" data-text="Products">Products</h2>
+          <p class="section-subtitle">Solutions we've built to solve real-world problems</p>
+        </div>
+
+        <div class="products-grid">
+
+          <!-- AI Counsellor -->
+          <a href="products/product-1.html" class="product-card">
+            <div class="product-icon">
+              <i class="bi bi-whatsapp"></i>
             </div>
-            <div class="stat-content">
-              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1">30</div>
-              <div class="stat-label">5★ Reviews</div>
+            <h3 class="product-name">AI Counsellor</h3>
+            <p class="product-tagline">WhatsApp AI agent that qualifies leads and books appointments for study-abroad consultancies</p>
+            <span class="product-cta">Learn More <i class="bi bi-arrow-right"></i></span>
+          </a>
+
+          <!-- Order Management System -->
+          <a href="products/product-2.html" class="product-card">
+            <div class="product-icon">
+              <i class="bi bi-building-gear"></i>
             </div>
-          </div>
+            <h3 class="product-name">Order Management System</h3>
+            <p class="product-tagline">Enterprise ERP for B2B distributors — from inquiry to invoice in one unified platform</p>
+            <span class="product-cta">Learn More <i class="bi bi-arrow-right"></i></span>
+          </a>
+
+          <!-- HypeZy -->
+          <a href="products/product-3.html" class="product-card">
+            <div class="product-icon">
+              <i class="bi bi-instagram"></i>
+            </div>
+            <h3 class="product-name">HypeZy</h3>
+            <p class="product-tagline">Instagram automation that feels human — auto DMs, smart triggers, and AI-powered content scheduling</p>
+            <span class="product-cta">Learn More <i class="bi bi-arrow-right"></i></span>
+          </a>
+
+          <!-- Jaipur Business -->
+          <a href="products/product-4.html" class="product-card">
+            <div class="product-icon">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h3 class="product-name">Jaipur Business</h3>
+            <p class="product-tagline">Hyperlocal B2B networking platform connecting Jaipur's entrepreneurs and service providers</p>
+            <span class="product-cta">Learn More <i class="bi bi-arrow-right"></i></span>
+          </a>
 
         </div>
       </div>
-    </section><!-- End About Section -->
+    </section><!-- End Products Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services-mf pt-5 route">
@@ -586,62 +601,6 @@
         </div>
       </div>
     </section><!-- End Services Section -->
-
-    <!-- Counter Section integrated into About section above -->
-
-    <!-- ======= Products Section ======= -->
-    <section id="products" class="products-section sect-pt4 route">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2 class="section-title" data-text="Products">Products</h2>
-          <p class="section-subtitle">Solutions we've built to solve real-world problems</p>
-        </div>
-
-        <div class="products-grid">
-
-          <!-- AI Counsellor -->
-          <a href="products/product-1.html" class="product-card">
-            <div class="product-icon">
-              <i class="bi bi-whatsapp"></i>
-            </div>
-            <h3 class="product-name">AI Counsellor</h3>
-            <p class="product-tagline">WhatsApp AI agent that qualifies leads and books appointments for study-abroad consultancies</p>
-            <span class="product-cta">Learn More <i class="bi bi-arrow-right"></i></span>
-          </a>
-
-          <!-- Order Management System -->
-          <a href="products/product-2.html" class="product-card">
-            <div class="product-icon">
-              <i class="bi bi-building-gear"></i>
-            </div>
-            <h3 class="product-name">Order Management System</h3>
-            <p class="product-tagline">Enterprise ERP for B2B distributors — from inquiry to invoice in one unified platform</p>
-            <span class="product-cta">Learn More <i class="bi bi-arrow-right"></i></span>
-          </a>
-
-          <!-- HypeZy -->
-          <a href="products/product-3.html" class="product-card">
-            <div class="product-icon">
-              <i class="bi bi-instagram"></i>
-            </div>
-            <h3 class="product-name">HypeZy</h3>
-            <p class="product-tagline">Instagram automation that feels human — auto DMs, smart triggers, and AI-powered content scheduling</p>
-            <span class="product-cta">Learn More <i class="bi bi-arrow-right"></i></span>
-          </a>
-
-          <!-- Jaipur Business -->
-          <a href="products/product-4.html" class="product-card">
-            <div class="product-icon">
-              <i class="bi bi-people-fill"></i>
-            </div>
-            <h3 class="product-name">Jaipur Business</h3>
-            <p class="product-tagline">Hyperlocal B2B networking platform connecting Jaipur's entrepreneurs and service providers</p>
-            <span class="product-cta">Learn More <i class="bi bi-arrow-right"></i></span>
-          </a>
-
-        </div>
-      </div>
-    </section><!-- End Products Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="work" class="portfolio-mf sect-pt4 route">
