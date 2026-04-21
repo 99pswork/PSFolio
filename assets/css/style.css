@@ -2037,6 +2037,192 @@ html {
   }
 }
 
+/* -------------------------------------------------------
+   Product Detail Pages — Mobile Breakpoints
+------------------------------------------------------- */
+@media (max-width: 767px) {
+  .product-detail-section {
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .product-breadcrumb {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .product-detail-hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .product-detail-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-detail-subtitle {
+    font-size: clamp(0.95rem, 4vw, 1.125rem);
+  }
+
+  .product-detail-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-product-primary,
+  .btn-product-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .product-detail-image {
+    margin-top: 2rem;
+  }
+
+  .product-detail-section-title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .product-step {
+    padding: 1.5rem 0;
+  }
+
+  .product-step-content {
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-step-content h3 {
+    font-size: clamp(1.1rem, 4vw, 1.35rem);
+  }
+
+  .product-step-content p {
+    font-size: 0.9rem;
+  }
+
+  .product-step-number {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-feature-card {
+    padding: 1.25rem;
+  }
+
+  .product-feature-card i {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .product-feature-card h4 {
+    font-size: 1rem;
+  }
+
+  .product-detail-impact {
+    margin: 2.5rem 0;
+  }
+
+  .product-impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .product-impact-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .product-impact-value {
+    font-size: clamp(1.5rem, 7vw, 2.25rem);
+  }
+
+  .product-impact-label {
+    font-size: 0.75rem;
+  }
+
+  .product-detail-about {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .product-about-content p,
+  .product-audience-list li {
+    font-size: 0.9rem;
+  }
+
+  .product-audience-list {
+    padding-left: 1.25rem;
+  }
+
+  .product-detail-tech {
+    margin-top: 2.5rem;
+  }
+
+  .product-tech-tags {
+    gap: 0.5rem;
+  }
+
+  .product-detail-cta {
+    padding: 2rem 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .product-detail-cta h2 {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+  }
+
+  .product-detail-cta p {
+    font-size: 0.9rem;
+  }
+
+  .product-detail-cta > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-detail-back {
+    margin-top: 2rem;
+  }
+
+  /* Always show text before image/video on mobile in reversed rows */
+  .flex-md-row-reverse .product-step-content,
+  .flex-md-row-reverse .product-step-image,
+  .flex-md-row-reverse > [class*="col-md-7"],
+  .flex-md-row-reverse > [class*="col-md-5"] {
+    order: unset !important;
+  }
+
+  .flex-md-row-reverse > [class*="col-md-7"] {
+    order: 1 !important;
+  }
+
+  .flex-md-row-reverse > [class*="col-md-5"] {
+    order: 2 !important;
+  }
+
+  /* ERP / HypeZy roles grid */
+  .erp-roles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .erp-role-card {
+    padding: 1.1rem;
+  }
+
+  /* Impact grid single column on very small screens */
+  @media (max-width: 400px) {
+    .product-impact-grid,
+    .erp-roles-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
 /* Portfolio Cards */
 .portfolio-card {
   display: flex;
