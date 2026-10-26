@@ -5244,9 +5244,20 @@ footer .credits a {
   background: #fff;
 }
 
-.portfolio-img--contain {
+.portfolio-image img.portfolio-img--contain {
   object-fit: contain;
   padding: 1.5rem;
+}
+
+.portfolio-image--light img.portfolio-img--contain {
+  padding: 2rem;
+}
+
+/* Six-tile stats grid: 3 + 3 instead of 5 + 1 */
+@media (min-width: 992px) {
+  .product-impact-grid--six {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 767px) {
