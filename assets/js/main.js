@@ -3,6 +3,9 @@
 * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
+*
+* Customised for PSFolio (pswork.in). Every vendor plugin below is optional:
+* product pages only load Bootstrap, so each init is guarded.
 */
 (function() {
   "use strict";
@@ -34,11 +37,13 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
+    el.addEventListener('scroll', listener, { passive: true })
   }
+
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   /**
    * Navbar links active state on scroll
@@ -65,16 +70,18 @@
    */
   const scrollto = (el) => {
     let header = select('#header')
-    let offset = header.offsetHeight
+    let offset = header ? header.offsetHeight : 0
 
-    if (!header.classList.contains('header-scrolled')) {
+    if (header && !header.classList.contains('header-scrolled')) {
       offset -= 16
     }
 
-    let elementPos = select(el).offsetTop
+    let target = select(el)
+    if (!target) return
+    let elementPos = target.offsetTop
     window.scrollTo({
       top: elementPos - offset,
-      behavior: 'smooth'
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
     })
   }
 
@@ -108,11 +115,32 @@
     }
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
+    backtotop.addEventListener('click', (e) => {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' })
+    })
   }
 
   /**
    * Mobile nav toggle
    */
+  const closeMobileNav = () => {
+    let navbar = select('#navbar')
+    let header = select('#header')
+    let navbarToggle = select('.mobile-nav-toggle')
+    if (!navbar || !navbar.classList.contains('navbar-mobile')) return
+    navbar.classList.remove('navbar-mobile')
+    if (navbarToggle) {
+      navbarToggle.classList.add('bi-list')
+      navbarToggle.classList.remove('bi-x')
+    }
+    if (header) {
+      header.style.backdropFilter = ''
+      header.style.webkitBackdropFilter = ''
+    }
+    document.body.style.overflow = ''
+  }
+
   on('click', '.mobile-nav-toggle', function(e) {
     let navbar = select('#navbar')
     let header = select('#header')
@@ -123,11 +151,17 @@
     if (navbar.classList.contains('navbar-mobile')) {
       header.style.backdropFilter = 'none'
       header.style.webkitBackdropFilter = 'none'
+      document.body.style.overflow = 'hidden'
     } else {
       header.style.backdropFilter = ''
       header.style.webkitBackdropFilter = ''
+      document.body.style.overflow = ''
     }
   })
+
+  // Close the mobile menu with Escape, or when any plain link inside it is used
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileNav() })
+  on('click', '#navbar a:not(.scrollto)', closeMobileNav, true)
 
   /**
    * Mobile nav dropdowns activate
@@ -140,28 +174,18 @@
   }, true)
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-        let header = select('#header')
-        header.style.backdropFilter = ''
-        header.style.webkitBackdropFilter = ''
-      }
+      closeMobileNav()
       scrollto(this.hash)
     }
   }, true)
 
   /**
-   * Scroll with ofset on page load with hash links in the url
+   * Scroll with offset on page load with hash links in the url
    */
   window.addEventListener('load', () => {
     if (window.location.hash) {
@@ -175,9 +199,9 @@
    * Intro type effect
    */
   const typed = select('.typed')
-  if (typed) {
+  if (typed && typeof Typed !== 'undefined') {
     let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
+    typed_strings = typed_strings.split(',').map(s => s.trim())
     new Typed('.typed', {
       strings: typed_strings,
       loop: true,
@@ -185,49 +209,61 @@
       backSpeed: 50,
       backDelay: 2000
     });
+  } else if (typed) {
+    typed.textContent = (typed.getAttribute('data-typed-items') || '').split(',')[0]
   }
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
+  if (typeof GLightbox !== 'undefined' && select('.portfolio-lightbox')) {
+    GLightbox({
+      selector: '.portfolio-lightbox'
+    });
+  }
 
   /**
    * Testimonials slider
    */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+  if (typeof Swiper !== 'undefined' && select('.testimonials-slider')) {
+    new Swiper('.testimonials-slider', {
+      speed: 600,
+      loop: true,
+      autoplay: prefersReducedMotion ? false : {
+        delay: 6000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      slidesPerView: 1,
+      autoHeight: true,
+      grabCursor: true,
+      pagination: {
+        el: '.testimonials-slider .swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      a11y: { enabled: true }
+    });
+  }
 
   /**
    * Portfolio details slider
    */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+  if (typeof Swiper !== 'undefined' && select('.portfolio-details-slider')) {
+    new Swiper('.portfolio-details-slider', {
+      speed: 400,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+  }
 
   /**
    * Preloader
@@ -242,7 +278,14 @@
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
+
+  /**
+   * Footer year
+   */
+  select('.js-year', true).forEach(el => { el.textContent = new Date().getFullYear() })
 
   /**
    * Scroll Progress Bar
@@ -250,60 +293,61 @@
   const createProgressBar = () => {
     const progressBar = document.createElement('div');
     progressBar.id = 'scroll-progress';
-    progressBar.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 3px;
-      background: linear-gradient(90deg, #0066FF, #3388FF);
-      z-index: 9999;
-      transition: width 0.1s ease-out;
-    `;
+    progressBar.setAttribute('aria-hidden', 'true');
     document.body.appendChild(progressBar);
     return progressBar;
   };
 
   const progressBar = createProgressBar();
+  let progressTicking = false;
 
   const updateProgressBar = () => {
-    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (window.scrollY / windowHeight) * 100;
-    progressBar.style.width = scrolled + '%';
+    if (progressTicking) return;
+    progressTicking = true;
+    requestAnimationFrame(() => {
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = windowHeight > 0 ? (window.scrollY / windowHeight) * 100 : 0;
+      progressBar.style.width = scrolled + '%';
+      progressTicking = false;
+    });
   };
 
-  window.addEventListener('scroll', updateProgressBar);
+  window.addEventListener('scroll', updateProgressBar, { passive: true });
   window.addEventListener('resize', updateProgressBar);
+  window.addEventListener('load', updateProgressBar);
 
   /**
-   * Card Reveal Animations with Intersection Observer
+   * Card Reveal Animations with Intersection Observer.
+   * Uses classes (not inline styles) so CSS :hover transforms keep working after reveal.
    */
   const observeCards = () => {
-    const cards = document.querySelectorAll('.bento-card, .service-card, .portfolio-card');
+    const cards = document.querySelectorAll('.bento-card, .product-card, .process-step, .faq-item');
+    if (!cards.length) return;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      cards.forEach(card => card.classList.add('is-visible'));
+      return;
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         }
       });
     }, {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -40px 0px'
     });
 
     cards.forEach(card => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      card.classList.add('reveal');
       observer.observe(card);
     });
   };
 
-  // Run on page load
-  window.addEventListener('load', observeCards);
+  observeCards();
 
   /**
    * Scroll indicator smooth scroll
@@ -311,10 +355,7 @@
   const scrollIndicator = select('.scroll-indicator');
   if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
-      const aboutSection = select('#about');
-      if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (select('#about')) scrollto('#about')
     });
   }
 
@@ -332,11 +373,13 @@
     canvas.width = width;
     canvas.height = height;
 
+    const isSmallScreen = width < 768
+
     // Configuration
     const config = {
-      particleCount: 80,
+      particleCount: isSmallScreen ? 40 : 80,
       particleSpeed: 0.3,
-      connectionDistance: 150,
+      connectionDistance: isSmallScreen ? 120 : 150,
       particleColor: 'rgba(0, 102, 255, 0.6)',
       lineColor: 'rgba(0, 102, 255, 0.2)',
       glowColor: 'rgba(0, 102, 255, 0.8)',
@@ -407,30 +450,48 @@
       }
     };
 
-    // Animation loop
-    const animate = () => {
+    const drawFrame = () => {
       ctx.clearRect(0, 0, width, height);
-
       particles.forEach(particle => {
         particle.update();
         particle.draw();
       });
-
       drawConnections();
-
-      requestAnimationFrame(animate);
     };
 
+    // Animation loop: paused when the tab is hidden or the hero is scrolled far away
+    let rafId = null;
+    const animate = () => {
+      drawFrame();
+      rafId = requestAnimationFrame(animate);
+    };
+    const start = () => { if (rafId === null) rafId = requestAnimationFrame(animate); };
+    const stop = () => { if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; } };
+
+    if (prefersReducedMotion) {
+      drawFrame();
+      return;
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      document.hidden ? stop() : start();
+    });
+
     // Handle window resize
+    let resizeTimer;
     window.addEventListener('resize', () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+        drawFrame();
+      }, 150);
     });
 
     // Start animation
-    animate();
+    start();
   };
 
   // Initialize network background on load

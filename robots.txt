@@ -1,21 +1,15 @@
-# robots.txt for pranjalsurana.com
+# robots.txt for pswork.in (Pranjal Surana – PSFolio)
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://pranjalsurana.com/sitemap.xml
+# Unused template pages
+Disallow: /blog-single.html
+Disallow: /blog-single
+Disallow: /portfolio-details.html
+Disallow: /portfolio-details
 
-# Crawl-delay for good practice
-Crawl-delay: 0
-
-# Allow all bots to index images
-User-agent: Googlebot-Image
-Allow: /assets/img/
-
-# Block access to sensitive directories
+# Not for indexing
 Disallow: /forms/
-Disallow: /vendor/
 
-# Allow access to CSS and JS for proper rendering
-Allow: /assets/css/
-Allow: /assets/js/
+# Sitemap
+Sitemap: https://pswork.in/sitemap.xml
